@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+@mixin flex($justifyContent: flex-start, $alignItems: flex-start, $flexDirection: row) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+    flex-direction: $flexDirection;
+}
+
+.navbar-container {
+    width: 100vw;
+    height: 4rem;
+    margin: auto;
+    background-color: black;
+    position: fixed;
+
+    .navbar-container-fluid {
+        width: 90%;
+        margin: auto;
+        height: 4rem;
+        @include flex(space-between, center);
+
+        .logo-container {
+            width: 13rem;
+            height: 4rem;
+            @include flex();
+            font-family: "Ubuntu";
+
+            .logo-image {
+                width: 4rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                color: white;
+                margin: auto;
+            }
+        }
+
+        .navbar {
+            width: 70%;
+            @include flex(flex-end);
+
+            .menu {
+                background-color: black;
+                color: white;
+                width: 90%;
+                @include flex(flex-end);
+
+                .menu-option {
+                    border-radius: 5px;
+                    background-color: black;
+                    font-size: 1rem;
+                }
+            }
+            .nav {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .navbar-container {
+
+        .navbar-container-fluid {
+            width: 95%;
+
+            .logo-container {
+                width: 13rem;
+                h2 {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .navbar {
+                width: 70%;
+
+                .menu {
+                    width: 100%;
+
+                    .menu-option {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+            .nav {
+                display: none;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 767px) {
+    .navbar-container {
+
+        .navbar-container-fluid {
+            width: 100%;
+
+            .logo-container {
+                width: 9rem;
+
+                .logo-image {
+                    width: 3rem;
+                    margin: auto;
+                }
+                h2 {
+                    font-size: 0.9rem;
+                    color: white;
+                    margin: auto;
+                }
+            }
+
+            .navbar {
+                .menu {
+                    display: none;
+                }
+
+                .nav {
+                    display: block;
+                    margin-right: -1.5rem;
+                    width: 4.2rem;
+                    text-align: center;
+                    background-color: black;
+
+                    .nav-option {
+                        background-color: black;
+                    }
+                }
+            }
+        }
+    }
+}
