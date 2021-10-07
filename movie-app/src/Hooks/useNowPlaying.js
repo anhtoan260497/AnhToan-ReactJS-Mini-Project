@@ -6,19 +6,17 @@ function useNowPlaying() {
   const API_Key = "8f801ff902ecc53548ff30dc7dacbe10";
 
   useEffect(() => {
-    let nowPlayingList = [];
     const getNowPlaying = async () => {
+      let nowPlayingList = [];
       let resNowPlaying = await axios.get(
         `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_Key}&language=en-US&page=1`
       );
-      let i = 0;
-      while (i < 5) {
+     for(let i = 0; i < 5 ; i++) {
         nowPlayingList.push(resNowPlaying.data.results[i]);
-        i++;
       }
+      setNowPlaying(nowPlayingList);
     };
-    getNowPlaying();
-    setNowPlaying(nowPlayingList);
+     getNowPlaying()
   }, []);
   return nowPlaying;
 }
