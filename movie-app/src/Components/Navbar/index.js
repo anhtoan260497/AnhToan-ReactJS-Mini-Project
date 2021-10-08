@@ -1,18 +1,27 @@
-import React, { useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./_Navbar.scss";
 import "antd/dist/antd.css";
 import { Menu } from "antd";
-import { PicRightOutlined } from "@ant-design/icons";
+import { Input } from 'antd';
+import { PicRightOutlined, SearchOutlined } from "@ant-design/icons";
+
 const { SubMenu } = Menu;
 
 function Navbar(props) {
   const [option, setOption] = useState("home");
+  const [isShowSearchBar,setIsShowSearchBar] = useState(false)
 
   const handleClickOption = (e) => {
     setOption(e.key);
   };
 
+  const handleSearhIcon = () => {
+    if(isShowSearchBar) {setIsShowSearchBar(false)} else {setIsShowSearchBar(true)}
+  }
+
+
   return (
+    <div className="title">
     <div className="navbar-container">
       <div className="navbar-container-fluid">
         <div className="logo-container">
@@ -46,6 +55,8 @@ function Navbar(props) {
             <Menu.Item className="menu-option" key="top">
               Top Rated
             </Menu.Item>
+            <Menu.Item onClick={handleSearhIcon} icon={<SearchOutlined />} className="menu-option" key="search">
+            </Menu.Item>
           </Menu>
 
           <Menu
@@ -76,6 +87,8 @@ function Navbar(props) {
         </div>
       </div>
     </div>
+   { isShowSearchBar ? <Input className="search-input" size="large" placeholder="Search For Film" prefix={<SearchOutlined />} /> : null }
+   </div>
   );
 }
 

@@ -7,92 +7,104 @@
     flex-direction: $flexDirection;
 }
 
-.navbar-container {
-    width: 100vw;
-    height: 4rem;
-    margin: auto;
-    background-color: black;
-    position: fixed;
-
-    .navbar-container-fluid {
-        width: 90%;
-        margin: auto;
-        height: 4rem;
-        @include flex(space-between, center);
-
-        .logo-container {
-            width: 13rem;
-            height: 4rem;
-            @include flex();
-            font-family: "Ubuntu";
-
-            .logo-image {
-                width: 4rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-                color: white;
-                margin: auto;
-            }
-        }
-
-        .navbar {
-            width: 70%;
-            @include flex(flex-end);
-
-            .menu {
-                background-color: black;
-                color: white;
-                width: 90%;
-                @include flex(flex-end);
-
-                .menu-option {
-                    border-radius: 5px;
-                    background-color: black;
-                    font-size: 1rem;
-                }
-            }
-            .nav {
-                display: none;
-            }
-        }
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+.title {
     .navbar-container {
+        width: 100vw;
+        height: 4rem;
+        margin: auto;
+        background-color: black;
+        position: fixed;
 
         .navbar-container-fluid {
-            width: 95%;
+            width: 90%;
+            margin: auto;
+            height: 4rem;
+            @include flex(space-between, center);
 
             .logo-container {
                 width: 13rem;
+                height: 4rem;
+                @include flex();
+                font-family: "Ubuntu";
+
+                .logo-image {
+                    width: 4rem;
+                }
+
                 h2 {
-                    font-size: 1.4rem;
+                    font-size: 1.5rem;
+                    color: white;
+                    margin: auto;
                 }
             }
 
             .navbar {
                 width: 70%;
+                @include flex(flex-end);
 
                 .menu {
-                    width: 100%;
+                    background-color: black;
+                    color: white;
+                    width: 90%;
+                    @include flex(flex-end);
 
                     .menu-option {
-                        font-size: 0.9rem;
+                        border-radius: 5px;
+                        background-color: black;
+                        font-size: 1rem;
                     }
                 }
-            }
-            .nav {
-                display: none;
+                .nav {
+                    display: none;
+                }
             }
         }
     }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .navbar-container {
+            .navbar-container-fluid {
+                width: 95%;
+
+                .logo-container {
+                    width: 13rem;
+                    h2 {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .navbar {
+                    width: 70%;
+
+                    .menu {
+                        width: 100%;
+
+                        .menu-option {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+                .nav {
+                    display: none;
+                }
+            }
+        }
+    }
+    .search-input {
+        position: fixed;
+        top: 4rem;
+
+        font-family: "Ubuntu";
+        font-size: 1.5rem;
+        padding: 0 3rem;
+        height: 3rem;
+        z-index: 2;
+
+    }
 }
+
 @media only screen and (max-width: 767px) {
     .navbar-container {
-
         .navbar-container-fluid {
             width: 100%;
 
