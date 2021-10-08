@@ -5,9 +5,9 @@ import "./_Carousel.scss";
 import { Link } from "react-router-dom";
 import useNowPlaying from "../../Hooks/useNowPlaying";
 
-function CarouselSlide(props) {
-
-  const nowPlaying = useNowPlaying()
+function CarouselSlide() {
+  const API_Key =  process.env.REACT_APP_MOVIE_API_KEY
+  const nowPlaying = useNowPlaying(API_Key)
   
 
   const renderCarousel = () => {

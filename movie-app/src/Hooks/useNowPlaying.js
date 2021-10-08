@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function useNowPlaying() {
-  const [nowPlaying, setNowPlaying] = useState([]);
-  const API_Key = "8f801ff902ecc53548ff30dc7dacbe10";
+function useNowPlaying(API_Key) {
 
+  const [nowPlaying, setNowPlaying] = useState([]);
   useEffect(() => {
     const getNowPlaying = async () => {
       let nowPlayingList = [];
@@ -17,7 +16,7 @@ function useNowPlaying() {
       setNowPlaying(nowPlayingList);
     };
      getNowPlaying()
-  }, []);
+  }, [API_Key]);
   return nowPlaying;
 }
 
