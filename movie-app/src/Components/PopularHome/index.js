@@ -6,12 +6,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import usePopularHome from "../../Hooks/usePopularHome";
+import useGetHomeMovies from "../../Hooks/useGetHomeMovies";
 import { RightCircleOutlined } from "@ant-design/icons";
 
 function PopularHome(props) {
   const API_Key =  process.env.REACT_APP_MOVIE_API_KEY
-  const popularHome = usePopularHome("popular",API_Key); // custome hook lấy Data theo type và API_Key
+  const popularHome = useGetHomeMovies("popular",API_Key); // custome hook lấy Data theo type và API_Key
 
   const renderPopularHome = () => {
     return popularHome.map((item, idx) => {

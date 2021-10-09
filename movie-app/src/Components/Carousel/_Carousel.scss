@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 
 .carousel-container {
-    position: absolute;
+    position: relative;
     top: 4rem;
+
 
     height: 35rem;
 
@@ -64,6 +65,15 @@
         }
     }
 }
+
+.ant-carousel .slick-dots li button {
+    background: #ff4ef6;
+    position: relative;
+    opacity: 1;
+    right: 15vw;
+}
+
+
 
 @media only screen and (max-width: 767px) {
     .carousel-container {

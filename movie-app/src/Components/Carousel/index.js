@@ -35,7 +35,6 @@ function CarouselSlide() {
   return (
     <Carousel className="carousel-container" autoplay effect="fade">
       {renderCarousel()}
-    
     </Carousel>
   );
 }
