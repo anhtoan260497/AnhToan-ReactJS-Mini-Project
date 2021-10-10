@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./_PopularHome.scss";
+import "./_NowPlayingHome.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Slider from "react-slick";
@@ -9,12 +9,13 @@ import { Link } from "react-router-dom";
 import useGetHomeMovies from "../../Hooks/useGetHomeMovies";
 import { RightCircleOutlined } from "@ant-design/icons";
 
-function PopularHome(props) {
+function NowPlayingHome(props) {
   const API_Key =  process.env.REACT_APP_MOVIE_API_KEY
-  const popularHome = useGetHomeMovies("popular",API_Key); // custome hook lấy Data theo type và API_Key
+  const nowPlayingHome = useGetHomeMovies("nowPlaying",API_Key); // custome hook lấy Data theo type và API_Key
 
-  const renderPopularHome = () => {
-    return popularHome.map((item, idx) => {
+  const renderNowPlayingHome = () => {
+      console.log(nowPlayingHome)
+    return nowPlayingHome.map((item, idx) => {
       return (
         <div key={idx}>
           <Link to={`/${item.id}`}>
@@ -121,18 +122,18 @@ function PopularHome(props) {
     <div
       data-aos-once="true"
       data-aos="fade-down"
-      className="popular-home-container"
+      className="nowplaying-home-container"
     >
-      <Link to="/Popular">
-        <h1 className="link-popular">
-          Popular Film <RightCircleOutlined />
+      <Link to="/NowPlaying">
+        <h1 className="link-nowplaying">
+         Now Playing Film <RightCircleOutlined />
         </h1>
       </Link>
       <Slider className="slider" {...settings}>
-        {renderPopularHome()}
+        {renderNowPlayingHome()}
       </Slider>
     </div>
   );
 }
 
-export default PopularHome;
+export default NowPlayingHome;

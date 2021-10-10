@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./_PopularHome.scss";
+import "./_TopRated.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Slider from "react-slick";
@@ -9,12 +9,11 @@ import { Link } from "react-router-dom";
 import useGetHomeMovies from "../../Hooks/useGetHomeMovies";
 import { RightCircleOutlined } from "@ant-design/icons";
 
-function PopularHome(props) {
+function TopRated(props) {
   const API_Key =  process.env.REACT_APP_MOVIE_API_KEY
-  const popularHome = useGetHomeMovies("popular",API_Key); // custome hook lấy Data theo type và API_Key
-
-  const renderPopularHome = () => {
-    return popularHome.map((item, idx) => {
+  const topRated = useGetHomeMovies("topRated",API_Key); // custome hook lấy Data theo type và API_Key
+  const renderTopRated = () => {
+    return topRated.map((item, idx) => {
       return (
         <div key={idx}>
           <Link to={`/${item.id}`}>
@@ -121,18 +120,18 @@ function PopularHome(props) {
     <div
       data-aos-once="true"
       data-aos="fade-down"
-      className="popular-home-container"
+      className="toprated-home-container"
     >
-      <Link to="/Popular">
-        <h1 className="link-popular">
-          Popular Film <RightCircleOutlined />
+      <Link to="/TopRated">
+        <h1 className="link-toprated">
+         Top Rated Film <RightCircleOutlined />
         </h1>
       </Link>
       <Slider className="slider" {...settings}>
-        {renderPopularHome()}
+        {renderTopRated()}
       </Slider>
     </div>
   );
 }
 
-export default PopularHome;
+export default TopRated;

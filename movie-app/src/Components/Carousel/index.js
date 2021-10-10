@@ -21,7 +21,7 @@ function CarouselSlide() {
             alt=""
           />
           <div className="poster-detail">
-            <h1 className="poster-title">{item.original_title}</h1>
+            <h1 className="poster-title">{item.title}</h1>
             <p className="poster-description">
              {item.overview}
             </p>

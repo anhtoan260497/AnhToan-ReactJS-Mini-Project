@@ -41,7 +41,7 @@ function Navbar(props) {
         <Link to="NowPlaying">Now Playing</Link>
       </Menu.Item>
       <Menu.Item className="menu-option" key="upcoming">
-        <Link to="UpComing">Up Coming</Link>
+        <Link to="Upcoming">Up Coming</Link>
       </Menu.Item>
       <Menu.Item className="menu-option" key="top">
         <Link to="TopRated">TopRated</Link>
@@ -53,6 +53,7 @@ function Navbar(props) {
     <div className="title">
       <div className="navbar-container">
         <div className="navbar-container-fluid">
+          <Link to="/">
           <div className="logo-container">
             <img
               className="logo-image"
@@ -61,6 +62,7 @@ function Navbar(props) {
             />
             <h2>Movie React</h2>
           </div>
+          </Link>
           <div className="navbar">
             <Menu
               className="menu"
@@ -79,7 +81,7 @@ function Navbar(props) {
                 <Link to="NowPlaying">Now Playing</Link>
               </Menu.Item>
               <Menu.Item className="menu-option" key="upcoming">
-                <Link to="UpComing">Up Coming</Link>
+                <Link to="Upcoming">Up Coming</Link>
               </Menu.Item>
               <Menu.Item className="menu-option" key="top">
                 <Link to="TopRated">TopRated</Link>

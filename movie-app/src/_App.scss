@@ -1,4 +1,11 @@
 .App {
     background-color: rgb(17,17,17);
-    overflow-x: auto;
+    overflow-x: hidden;
+}
+
+.slick-track {
+    width: 9000px;
+}
+.slick-slide.slick-active {
+    display: block;
 }
