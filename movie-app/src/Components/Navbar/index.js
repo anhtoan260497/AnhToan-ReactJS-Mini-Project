@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./_Navbar.scss";
 import "antd/dist/antd.css";
 import { Menu, Dropdown } from "antd";
 import { Input } from "antd";
 import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { useDebounce } from "use-debounce/lib";
+import axios from "axios";
 
 function Navbar(props) {
+  // const API_Key = process.env.REACT_APP_MOVIE_API_KEY;
   const [option, setOption] = useState("home");
   const [isShowSearchBar, setIsShowSearchBar] = useState(false);
+  const [search, setSearch] = useState("");
+  // const searchItem = useDebounce(search, 300); // Debounce lấy được keyword cần search
 
   const handleClickOption = (e) => {
     setOption(e.key);
@@ -21,6 +26,23 @@ function Navbar(props) {
       setIsShowSearchBar(true);
     }
   };
+
+  const handleSearchTyping = (e) => {
+    setSearch(e.target.value);
+  };
+
+  // useEffect(() => {
+  //   const getSearchData = async (keyword) => {
+  //     console.log(searchItem)
+  //     if (searchItem) {
+  //       let resData = await axios.get(
+  //         `https://api.themoviedb.org/3/search/movie?api_key=${API_Key}&query=${keyword[0]}`
+  //       );
+  //       console.log(resData.data)
+  //     }
+  //   };
+  //   getSearchData(searchItem);
+  // }, [searchItem, API_Key]);
 
   const menu = (
     <Menu
@@ -54,14 +76,14 @@ function Navbar(props) {
       <div className="navbar-container">
         <div className="navbar-container-fluid">
           <Link to="/">
-          <div className="logo-container">
-            <img
-              className="logo-image"
-              src={process.env.PUBLIC_URL + "/logo512.png"}
-              alt=""
-            />
-            <h2>Movie React</h2>
-          </div>
+            <div className="logo-container">
+              <img
+                className="logo-image"
+                src={process.env.PUBLIC_URL + "/logo512.png"}
+                alt=""
+              />
+              <h2>Movie React</h2>
+            </div>
           </Link>
           <div className="navbar">
             <Menu
@@ -122,6 +144,8 @@ function Navbar(props) {
           className="search-input"
           size="large"
           placeholder="Search For Film"
+          value={search}
+          onChange={(e) => handleSearchTyping(e)}
           prefix={<SearchOutlined />}
         />
       ) : null}

@@ -14,7 +14,6 @@ function NowPlayingHome(props) {
   const nowPlayingHome = useGetHomeMovies("nowPlaying",API_Key); // custome hook lấy Data theo type và API_Key
 
   const renderNowPlayingHome = () => {
-      console.log(nowPlayingHome)
     return nowPlayingHome.map((item, idx) => {
       return (
         <div key={idx}>
