@@ -19,7 +19,7 @@
     .link-popular{
         font-size: 2rem;
         height: 3rem;
-        width: 13rem;
+        width: 17rem;
         color:white;
         font-family: 'Dosis', sans-serif;
         &:hover{
@@ -43,8 +43,8 @@
 
                 .poster-name{
                     opacity: 1;
-                    display: block;
-                    transition: 1s ease;
+                    transition: 1s ease-in-out;
+                    
                 }
             }
 
@@ -77,13 +77,14 @@
         width: 95%;
         height: 20rem;
         padding: 0 0 0 5%;
+        margin-top: 8rem !important;
     
-        margin: 8rem auto 0 auto;
+        margin: 8rem 2.5% 0 auto;
     
         .link-popular{
             font-size: 1.5rem;
             height: 1rem;
-            width: 10rem;
+            width: 12rem;
         }
     
         .slider {
@@ -91,15 +92,15 @@
             .filmcard-container {
                 width: 90%;
                 height: 10rem;
+                position: relative;
+                left: 0.5rem;
+                background-image: linear-gradient(180deg, rgb(17,17,17,0%), rgb(17,17,17,80%));
+                
     
                 
                 &:hover {
-                    background-image: linear-gradient(180deg, rgb(17,17,17,0%), rgb(17,17,17,100%));
-    
-                    .poster-name{
-                        display: block;
-                        transition: 1s ease;
-                    }
+                    background-image: linear-gradient(180deg, rgb(17,17,17,0%), rgb(17,17,17,80%));
+
                 }
     
                 .poster-image {
@@ -111,14 +112,15 @@
                 }
     
                 .poster-name {
-                    display: none;
-                    width: 2%;
+                    opacity: 1;
+                    display: block;
+                    width: 100%;
                     z-index: 10;
                     position: absolute;
     
                     font-size: 1rem;
                     text-align: center;
-                    top:40%;
+                    top:70%;
                     color:white;
                     transition:  1 ease;
                 }

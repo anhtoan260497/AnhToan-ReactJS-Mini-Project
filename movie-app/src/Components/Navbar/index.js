@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./_Navbar.scss";
 import "antd/dist/antd.css";
 import { Menu, Dropdown } from "antd";
 import { Input } from "antd";
 import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { useDebounce } from "use-debounce/lib";
-import axios from "axios";
+// import { useDebounce } from "use-debounce/lib";
+// import axios from "axios";
 
-function Navbar(props) {
+function Navbar({pageType}) {
   // const API_Key = process.env.REACT_APP_MOVIE_API_KEY;
-  const [option, setOption] = useState("home");
+  const [option, setOption] = useState(pageType);
   const [isShowSearchBar, setIsShowSearchBar] = useState(false);
   const [search, setSearch] = useState("");
   // const searchItem = useDebounce(search, 300); // Debounce lấy được keyword cần search
@@ -52,6 +52,7 @@ function Navbar(props) {
         marginTop: "1rem",
         textAlign: "center",
       }}
+      selectedKeys={option}
     >
       <Menu.Item className="menu-option" key="home">
         <Link to="/">Home</Link>

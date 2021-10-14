@@ -13,7 +13,7 @@ function CarouselSlide() {
   const renderCarousel = () => {
    return  nowPlaying.map((item,idx) => {
      return (<div key={idx} >
-      <Link to={`/${item.id}`}>
+      <Link to={`/movie/${item.id}`}>
         <div className="poster-container">
           <img
             className="img-carousel-poster"

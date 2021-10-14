@@ -17,7 +17,7 @@ function NowPlayingHome(props) {
     return nowPlayingHome.map((item, idx) => {
       return (
         <div key={idx}>
-          <Link to={`/${item.id}`}>
+          <Link to={`/movie/${item.id}`}>
             <div className="filmcard-container">
               <img
                 className="poster-image"
