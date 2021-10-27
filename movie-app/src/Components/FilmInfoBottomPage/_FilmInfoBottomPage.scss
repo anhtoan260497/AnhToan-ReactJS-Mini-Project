@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'); // font cast name
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap'); //cast-title name
+
+.cast-title{
+ color: white;
+ margin: 2rem 0 0 2rem;
+ font-family: 'Zen Antique', serif;
+}
+
+.bottom-info-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    padding: 2rem 1rem;
+
+    .starring-container {
+        width: 100%;
+        background-color: rgb(17, 17, 17);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-gap: 2rem;
+        padding: 0 1rem;
+
+        .starring {
+            width: 12rem;
+            height: 20rem;
+            background-color: white;
+            background-size: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+
+            .cast-image-container {
+                width: 100%;
+                height: 75%;
+
+                .cast-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: top;
+                }
+            }
+            .cast-name-container {
+                width: 100%;
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+
+                
+                .cast-name {
+                    font-family: 'Architects Daughter', cursive;
+                    font-size: 1rem;
+                    text-align: center;
+                }
+
+                .cast-character {
+                    font-family: 'Architects Daughter', cursive;
+                    color:gray;
+                    font-size:1rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .film-extra-info {
+        width: 100%;
+        height: 400px;
+        background-color: blanchedalmond;
+    }
+}

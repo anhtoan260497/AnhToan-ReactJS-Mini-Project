@@ -1,12 +1,11 @@
 import { Button, Tooltip } from "antd";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment} from "react";
 import "./_FilmInfoTopPage.scss";
 import "antd/dist/antd.css";
 import { CaretLeftOutlined,PlayCircleOutlined } from "@ant-design/icons";
 import Navbar from "../Navbar";
 import { useHistory } from "react-router";
 import { Progress } from "antd";
-import axios from "axios";
 
 function FilmInfoTopPage({ filmInfoData }) {
   const history = useHistory();

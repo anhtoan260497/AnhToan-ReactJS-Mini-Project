@@ -3,16 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'); //tagline
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200&display=swap'); // overview
 .top-info-container{
-    height: 30rem;
+    height: 32rem;
     background-size: 100%;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
     
     .top-info-background-transparent{
         background-color: rgba(41,41,41,80%);
         position:relative;
-        height: 26rem; // heigt của background transparent
+        height: 28rem; // heigt của background transparent
         top:4rem;
-
         .top-info{
             position: relative;
             width: 100%;
@@ -110,11 +111,11 @@
 
 @media only screen and (max-width : 1024px) and (min-width:768px) {
     .top-info-container{
-        height: 26rem;
+        height: 28rem;
         overflow: hidden;
         
         .top-info-background-transparent{
-            height: 22rem; // height của background transparent
+            height: 25rem; // height của background transparent
     
             .top-info{
                 height: 22rem;
@@ -247,7 +248,7 @@
                     }
     
                     .homepage {
-                        height: 20%;
+                        height: 10%;
                         margin-top:0.2rem;
                         font-size: 1.2rem;
 
@@ -256,7 +257,7 @@
                     .overview {
                         height: 40%;
                         font-family: 'Josefin Sans', sans-serif;
-                        font-size:1rem;
+                        font-size:0.7rem;
                         font-style: normal;
                         color:white;
                     }

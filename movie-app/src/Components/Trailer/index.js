@@ -18,7 +18,11 @@ function Trailer(props) {
         return item.name.includes("Trailer") && item.official === true;
       });
       const num = linkTrailer.length
-      if(num > 1) {setKey(linkTrailer[1].key)} else {setKey(linkTrailer[0].key)}
+      if(num === 0) {
+        alert("no trailer for this film")
+        return
+      }
+      if(num > 2) {setKey(linkTrailer[1].key)} else {setKey(linkTrailer[0].key)}
     };
     getTrailer(id);
   }, [API_Key, id]);
@@ -26,7 +30,7 @@ function Trailer(props) {
   return (
   <Fragment>
     {key !== "" ? (
-      <div>
+      <div className="trailer-container" >
         <iframe
         className="video"
           src={`https://www.youtube.com/embed/${key}?autoplay=1&mute=1`}
