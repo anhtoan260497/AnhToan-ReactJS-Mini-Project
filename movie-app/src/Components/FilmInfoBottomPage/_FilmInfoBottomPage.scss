@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'); // font cast name
-@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap'); //cast-title name
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"); // font cast name
+@import url("https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap"); //cast-title name
 
-.cast-title{
- color: white;
- margin: 2rem 0 0 2rem;
- font-family: 'Zen Antique', serif;
+.cast-title {
+    color: white;
+    margin: 2rem 0 0 2rem;
+    font-family: "Zen Antique", serif;
 }
 
 .bottom-info-container {
@@ -23,7 +23,7 @@
         padding: 0 1rem;
 
         .starring {
-            width: 12rem;
+            width: 100%;
             height: 20rem;
             background-color: white;
             background-size: 100%;
@@ -47,17 +47,16 @@
                 display: flex;
                 flex-direction: column;
 
-                
                 .cast-name {
-                    font-family: 'Architects Daughter', cursive;
+                    font-family: "Architects Daughter", cursive;
                     font-size: 1rem;
                     text-align: center;
                 }
 
                 .cast-character {
-                    font-family: 'Architects Daughter', cursive;
-                    color:gray;
-                    font-size:1rem;
+                    font-family: "Architects Daughter", cursive;
+                    color: gray;
+                    font-size: 1rem;
                     text-align: center;
                 }
             }
@@ -65,7 +64,71 @@
     }
     .film-extra-info {
         width: 100%;
-        height: 400px;
+        height: 30rem;
         background-color: blanchedalmond;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .cast-title {
+        margin: 1rem 0 0 1rem;
+    }
+
+    .bottom-info-container {
+        grid-template-columns: 3fr 1fr;
+        padding: 1rem 0.5rem;
+
+        .starring-container {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+
+            .starring {
+                height: 15rem;
+            }
+        }
+        .film-extra-info {
+            width: 100%;
+            height: calc(15rem * (3 / 2));
+            background-color: blanchedalmond;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .cast-title {
+        margin: 1rem 0 0 1rem;
+    }
+
+    .bottom-info-container {
+        grid-template-columns: 2fr 1fr;
+        padding: 1rem 1rem 0 0;
+
+        .starring-container {
+            grid-template-columns: 1fr 1fr;
+
+            .starring {
+                height: 15rem;
+                .cast-name-container {
+    
+                    .cast-name {
+                        font-family: "Architects Daughter", cursive;
+                        font-size: 0.8rem;
+                        text-align: center;
+                    }
+    
+                    .cast-character {
+                        font-family: "Architects Daughter", cursive;
+                        color: gray;
+                        font-size: 0.7rem;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .film-extra-info {
+            width: 100%;
+            height: calc(15rem * (3 / 2));
+            background-color: blanchedalmond;
+        }
     }
 }
