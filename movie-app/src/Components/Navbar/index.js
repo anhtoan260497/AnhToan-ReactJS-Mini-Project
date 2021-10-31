@@ -31,18 +31,6 @@ function Navbar({pageType}) {
     setSearch(e.target.value);
   };
 
-  // useEffect(() => {
-  //   const getSearchData = async (keyword) => {
-  //     console.log(searchItem)
-  //     if (searchItem) {
-  //       let resData = await axios.get(
-  //         `https://api.themoviedb.org/3/search/movie?api_key=${API_Key}&query=${keyword[0]}`
-  //       );
-  //       console.log(resData.data)
-  //     }
-  //   };
-  //   getSearchData(searchItem);
-  // }, [searchItem, API_Key]);
 
   const menu = (
     <Menu

@@ -5,7 +5,6 @@ import './_Trailer.scss'
 function Trailer(props) {
   const API_Key = process.env.REACT_APP_MOVIE_API_KEY;
   const id = props.match.params.id;
-  console.log(id);
   const [key, setKey] = useState("");
 
   useEffect(() => {
@@ -13,7 +12,6 @@ function Trailer(props) {
       let resTrailer = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_Key}&language=en-US`
       );
-      console.log(resTrailer);
       let linkTrailer = resTrailer.data.results.filter((item) => {
         return item.name.includes("Trailer") && item.official === true;
       });

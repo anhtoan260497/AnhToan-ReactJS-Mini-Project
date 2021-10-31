@@ -8,7 +8,7 @@ function useNowPlaying(API_Key) {
     const getNowPlaying = async () => {
       let nowPlayingList = [];
       let resNowPlaying = await axios.get(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_Key}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_Key}&language=vi&page=1`
       );
      for(let i = 0; i < 5 ; i++) {
         nowPlayingList.push(resNowPlaying.data.results[i]);

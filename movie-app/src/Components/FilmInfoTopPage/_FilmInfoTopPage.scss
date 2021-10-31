@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap'); //title 
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'); //tagline
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap'); //; //tagline
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,200&display=swap'); // overview
 .top-info-container{
     height: 32rem;
@@ -58,7 +58,7 @@
 
                 .tagline{
                     height: 20%;
-                    font-family: 'Architects Daughter', cursive;
+                    font-family: 'Montserrat', sans-serif;
                     font-size: 1.5rem;
                     color:rgba(244,244,244,70%);
                     font-style: italic;
@@ -74,7 +74,7 @@
                     height: 40%;
                     @extend .tagline;
                     font-family: 'Josefin Sans', sans-serif;
-                    font-size:1.2rem;
+                    font-size:1.1rem;
                     font-style: normal;
                     color:white;
                 }
@@ -141,8 +141,7 @@
     
                     .tagline{
                         height: 20%;
-                        font-family: 'Architects Daughter', cursive;
-                        font-size: 1.2rem;
+                        font-size: 1.1rem;
                         color:rgba(244,244,244,70%);
                         font-style: italic;
                     }
@@ -157,7 +156,7 @@
                         height: 40%;
                         color:rgba(244,244,244,70%);
                         font-family: 'Josefin Sans', sans-serif;
-                        font-size:1rem;
+                        font-size:0.9rem;
                         font-style: normal;
                         color:white;
                     }
@@ -195,9 +194,9 @@
 
 @media only screen and (max-width : 767px) {
     .top-info-container{
-        height: 35rem;
+        height: 36rem;
         background-size: cover;
-        background-position: top;
+        background-position: center;
         overflow: hidden;
         
         .top-info-background-transparent{
@@ -234,14 +233,13 @@
                     .title-info{
                         height: 20%;
                         font-family: 'Baloo 2', cursive;
-                        font-size:2rem;
+                        font-size:1.5rem;
                         margin-top: 1rem;
                     }
     
                     .tagline{
                         height: 20%;
-                        font-family: 'Architects Daughter', cursive;
-                        font-size: 1.2rem;
+                        font-size: 1.0rem;
                         color:rgba(244,244,244,70%);
                         font-style: italic;
                         margin-top: 1rem;
@@ -257,7 +255,7 @@
                     .overview {
                         height: 40%;
                         font-family: 'Josefin Sans', sans-serif;
-                        font-size:0.7rem;
+                        font-size:0.66rem;
                         font-style: normal;
                         color:white;
                     }

@@ -8,7 +8,7 @@ function useFilmInfo(id,API_Key) {
     useEffect(()=>{
         const getData = async () =>{
             let resData = await axios.get(`
-            https://api.themoviedb.org/3/movie/${id}?api_key=${API_Key}&language=en-US`)
+            https://api.themoviedb.org/3/movie/${id}?api_key=${API_Key}&language=vi`)
             setData(resData.data)
             setIsLoading(false)
         }
