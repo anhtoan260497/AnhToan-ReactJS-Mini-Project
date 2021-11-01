@@ -2,8 +2,8 @@ import React from 'react';
 import useFilmCredits from '../../Hooks/useFilmCredits';
 
 import useFilmInfo from '../../Hooks/useFilmInfo';
-import FilmInfoBottomPage from '../FilmInfoBottomPage';
-import FilmInfoTopPage from '../FilmInfoTopPage';
+import FilmInfoBottomPage from '../../Components/FilmInfoBottomPage';
+import FilmInfoTopPage from '../../Components/FilmInfoTopPage';
 import './_FilmInfo.scss'
 
 function FilmInfo(props) {

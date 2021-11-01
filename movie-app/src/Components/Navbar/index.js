@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 // import { useDebounce } from "use-debounce/lib";
 // import axios from "axios";
 
-function Navbar({pageType}) {
+function Navbar({type}) {
   // const API_Key = process.env.REACT_APP_MOVIE_API_KEY;
-  const [option, setOption] = useState(pageType);
+  const [option, setOption] = useState(type);
   const [isShowSearchBar, setIsShowSearchBar] = useState(false);
   const [search, setSearch] = useState("");
   // const searchItem = useDebounce(search, 300); // Debounce lấy được keyword cần search

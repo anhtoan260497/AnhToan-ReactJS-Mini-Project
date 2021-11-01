@@ -3,6 +3,7 @@ import "./_App.scss";
 import Home from "./Home";
 import FilmInfo from "./Components/FilmInfo";
 import Trailer from "./Components/Trailer";
+import ListFilmPage from "./Components/ListFilmPage";
 require("dotenv").config();
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/movie/:id" component={FilmInfo} />
           <Route path="/:id/trailer" component={Trailer} />
+          <Route path="/:genres" component={ListFilmPage} /> 
         </Switch>
       </div>
     </BrowserRouter>
