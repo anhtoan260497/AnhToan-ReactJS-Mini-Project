@@ -1,9 +1,9 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./_App.scss";
 import Home from "./Home";
-import FilmInfo from "./Components/FilmInfo";
-import Trailer from "./Components/Trailer";
-import ListFilmPage from "./Components/ListFilmPage";
+import FilmInfo from "./Page/FilmInfo";
+import Trailer from "./Page/Trailer";
+import ListFilmPage from "./Page/ListFilmPage";
 require("dotenv").config();
 
 function App() {
