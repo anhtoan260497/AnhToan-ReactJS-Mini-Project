@@ -8,37 +8,10 @@ import {
 } from "@ant-design/icons";
 
 function FilmInfoBottomPage({ filmCreditsData, filmInfoData }) {
-  const [starringList, setStarringList] = useState([]);
-  const page = useRef(0);
 
-  useEffect(() => {
-    if (
-      page.current < 1 &&
-      filmCreditsData[0] === false &&
-      filmCreditsData[1].length >= 20
-    ) {
-      const result = [];
-      for (let i = 0; i < 20; i++) {
-        result.push(filmCreditsData[1][i]);
-      }
-      page.current += 1;
-      setStarringList(result);
-    } else if (
-      page.current < 1 &&
-      filmCreditsData[0] === false &&
-      filmCreditsData[1].length <= 20
-    ) {
-      const result = [];
-      for (let i = 0; i < filmCreditsData[1].length; i++) {
-        result.push(filmCreditsData[1][i]);
-      }
-      page.current += 1;
-      setStarringList(result);
-    }
-  }, [filmCreditsData, starringList]);
-
+  
   const renderStarringList = () => {
-    return starringList.map((item, idx) => {
+    return filmCreditsData[1].map((item, idx) => {
       const noImage = `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`;
       let image = "";
       if (!item.profile_path) {
