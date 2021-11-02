@@ -25,13 +25,16 @@ function Navbar({ type }) {
 
   const handleSearhIcon = () => {
     if (isShowSearchBar) {
+      setSearch("")
       setIsShowSearchBar(false);
+      setIsSearch(false)
     } else {
       setIsShowSearchBar(true);
     }
   }; // click icon search nếu đang bật chuyển tắt và đang tắt chuyển bật
 
-  const handleClickSearch = () => {
+  const handleClickSearchItem = () => {
+    setSearch("")
     setIsSearch(false);
     setIsShowSearchBar(false); // khi click vào 1 search item ở dòng  47 thì tắt thanh search và tắt luôn search item
   };
@@ -44,7 +47,7 @@ function Navbar({ type }) {
     return searchItemData.map((item, idx) => {
       return (
         <div key={idx} className="search-item">
-          <Link to={`/movie/${item.id}`} onClick={handleClickSearch}>
+          <Link to={`/movie/${item.id}`} onClick={handleClickSearchItem}>
             <div className="search-item-avatar">
               {" "}
               {item.backdrop_path ? (

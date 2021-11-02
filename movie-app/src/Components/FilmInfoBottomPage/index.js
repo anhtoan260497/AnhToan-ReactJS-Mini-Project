@@ -7,11 +7,26 @@ import {
   CloseCircleOutlined,
 } from "@ant-design/icons";
 
-function FilmInfoBottomPage({ filmCreditsData, filmInfoData }) {
+function FilmInfoBottomPage({ filmCreditsData, filmInfoData }) {  
+  const [starringList,setStarringList] = useState([])
+
+  useEffect(()=>{
+    if(!filmCreditsData[0] && filmCreditsData[1] !== []){
+      let result = []
+      if(filmCreditsData[1].length > 20 ){
+        for(let i = 0 ;i < 20 ; i++){
+          result.push(filmCreditsData[1][i])
+        }
+      } else {
+        result = filmCreditsData[1]
+      }
+      setStarringList(result)
+    }
+  },[filmCreditsData])
 
   
   const renderStarringList = () => {
-    return filmCreditsData[1].map((item, idx) => {
+    return starringList.map((item, idx) => {
       const noImage = `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`;
       let image = "";
       if (!item.profile_path) {
