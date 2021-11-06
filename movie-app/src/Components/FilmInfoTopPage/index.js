@@ -33,7 +33,7 @@ function FilmInfoTopPage({ filmInfoData }) {
 
   return (
     <Fragment>
-      <Navbar type={null} />
+      <Navbar type={""} />
       {!filmInfoData[1] ? (
         <div
           className="top-info-container"

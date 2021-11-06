@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./_ListFilmPage.scss";
 import NavBar from "../../Components/Navbar";
+import Filter from "../../Components/Filter";
+import ListFilm from "../../Components/ListFilm ";
+import useGetMovies from '../../Hooks/useGetHomeMovies'
 
 function ListFilmPage(props) {
-  let genres;
   let type = props.match.params.genres;
-
+  const API_Key = process.env.REACT_APP_MOVIE_API_KEY 
+  const [genres, setGenres] = useState()
+  const listFilm = useGetMovies(genres,API_Key)
+  console.log(type)
+  console.log(genres)
+  
+  
   // bấm vào type nào ở Home hoặc NavBar thì option đó ở NavBar sẽ sáng
-  switch (type) {
+  useEffect(()=>{
+
+    switch (type) {
     case "Popular":
-      genres = "popular";
+      setGenres("popular");
       break;
     case "NowPlaying":
-      genres = "now";
+      setGenres("nowPlaying");
       break;
     case "Upcoming":
-      genres = "upcoming";
+      setGenres("upcoming");
       break;
     case "TopRated":
-      genres = "top";
+      setGenres("topRated");
       break;
     default:
-      return;
+      return ;
   }
+  },[type])
+  
+
 
   return (
     <div>
       <NavBar type={genres} />
       <div className="list-film-page-container">
-          <div className=""></div>
-          <div className="list-film-container"></div>
+         <Filter />
+         <ListFilm listFilm={listFilm}/>
       </div>
     </div>
   );
