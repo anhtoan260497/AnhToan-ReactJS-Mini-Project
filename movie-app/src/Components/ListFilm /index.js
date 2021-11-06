@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./_ListFilm.scss";
 
 function ListFilm({ listFilm }) {
-    console.log(listFilm)
+  console.log(listFilm)
   const renderListFilm = () => {
     return listFilm.map((item, idx) => {
       return (

@@ -3,13 +3,16 @@ import "./_Filter.scss";
 import { Input, Space, Select } from "antd";
 const { Search } = Input;
 
-function Filter(props) {
+function Filter({onChangeSortType,onChangefilterKeyWords}) {
   const [filter, setFilter] = useState("");
-  const [selectFilter,setSelectFilter] = useState("")
+
 
 
   const onHandleFilter = (e) => {
-    setFilter(e.target.value);
+    setFilter(()=>{
+      setFilter(e.target.value) // set State cho ô search filter
+      onChangefilterKeyWords(e.target.value) // truyền value ra component ListFilmPage
+    });
   }; // nhập kí tự vào input
 
   const onSearch = () => {
@@ -19,8 +22,10 @@ function Filter(props) {
   const { Option } = Select;
 
   const onHandleSelect = (e) => {
-    setSelectFilter(e)
+    // setSelectFilter(e) // set lại hiển thị bên component filter
+    onChangeSortType(e) // set lại sortType ở component cha
   };
+
 
   return (
     <div className="filter-container">
