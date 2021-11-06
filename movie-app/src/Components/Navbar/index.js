@@ -18,7 +18,6 @@ function Navbar({ type }) {
   const [isSearch, setIsSearch] = useState(false); // hiển thị thanh search item
   const [searchItemData, setSearchItemData] = useState([]); //set data cho search
   console.warn = () => {}; // tắt hết mọi console warn cho dòng 118
-  console.log(type)
 
   const handleClickOption = (e) => {
     setOption(e.key); // bật sáng thẻ navbar chọn

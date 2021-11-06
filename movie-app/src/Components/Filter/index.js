@@ -15,9 +15,6 @@ function Filter({onChangeSortType,onChangefilterKeyWords}) {
     });
   }; // nhập kí tự vào input
 
-  const onSearch = () => {
-    console.log(filter)
-  }; // click nút search
 
   const { Option } = Select;
 
@@ -37,7 +34,6 @@ function Filter({onChangeSortType,onChangefilterKeyWords}) {
           placeholder="input search film"
           value={filter}
           onChange={(e) => onHandleFilter(e)}
-          onSearch={onSearch}
           enterButton
           allowClear={true}
         />
