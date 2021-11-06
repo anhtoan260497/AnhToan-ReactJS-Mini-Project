@@ -18,6 +18,7 @@ function Navbar({ type }) {
   const [isSearch, setIsSearch] = useState(false); // hiển thị thanh search item
   const [searchItemData, setSearchItemData] = useState([]); //set data cho search
   console.warn = () => {}; // tắt hết mọi console warn cho dòng 118
+  console.log(type)
 
   const handleClickOption = (e) => {
     setOption(e.key); // bật sáng thẻ navbar chọn
@@ -92,13 +93,13 @@ function Navbar({ type }) {
         <Link to="/Popular">Popular</Link>
       </Menu.Item>
       <Menu.Item className="menu-option" key="now">
-        <Link to="NowPlaying">Now Playing</Link>
+        <Link to="/NowPlaying">Now Playing</Link>
       </Menu.Item>
       <Menu.Item className="menu-option" key="upcoming">
-        <Link to="Upcoming">Up Coming</Link>
+        <Link to="/Upcoming">Up Coming</Link>
       </Menu.Item>
       <Menu.Item className="menu-option" key="top">
-        <Link to="TopRated">TopRated</Link>
+        <Link to="/TopRated">TopRated</Link>
       </Menu.Item>
     </Menu>
   );
@@ -149,13 +150,13 @@ function Navbar({ type }) {
                 <Link to="/Popular">Popular</Link>
               </Menu.Item>
               <Menu.Item className="menu-option" key="now">
-                <Link to="NowPlaying">Now Playing</Link>
+                <Link to="/NowPlaying">Now Playing</Link>
               </Menu.Item>
               <Menu.Item className="menu-option" key="upcoming">
-                <Link to="Upcoming">Up Coming</Link>
+                <Link to="/Upcoming">Up Coming</Link>
               </Menu.Item>
               <Menu.Item className="menu-option" key="top">
-                <Link to="TopRated">TopRated</Link>
+                <Link to="/TopRated">TopRated</Link>
               </Menu.Item>
               <Menu.Item
                 onClick={handleSearhIcon}
