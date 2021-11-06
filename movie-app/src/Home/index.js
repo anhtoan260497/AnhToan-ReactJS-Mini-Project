@@ -9,7 +9,7 @@ import UpcomingHome from "../Components/UpcomingHome";
 function Home() {
   return (
     <div>
-       <Navbar type="home" />
+      <Navbar type="home" />
       <Carousel />
       <PopularHome />
       <NowPlayingHome />
