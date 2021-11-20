@@ -10,10 +10,10 @@ function LandingPage() {
         <img src={process.env.PUBLIC_URL + "/images/landing-bg.jpg"} alt="" />
       </div>
       <div className="nav-logo">
-      <img src={process.env.PUBLIC_URL + "/images/landing-logo.png"} className="landing-logo" alt="" /><span>Weather App</span>
+      <img src={process.env.PUBLIC_URL + "/animated/partly-cloudy-day.svg"} className="landing-logo" alt="" /><span>Weather App</span>
       </div>
       <div className="landing-description">
-          <img src={process.env.PUBLIC_URL + "/images/landing-logo.png"} className="landing-logo" alt="" />
+          <img src={process.env.PUBLIC_URL + "/animated/partly-cloudy-day.svg"} className="landing-logo" alt="" />
           <div className="description">
             <h1>Weather App</h1>
             <p>Where You Get Your Weather Matters</p>

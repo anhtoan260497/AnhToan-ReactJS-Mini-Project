@@ -1,46 +1,10 @@
 //Fonts
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+// font-family: "Nunito", sans-serif;
 //Variables
 
-$weather-info-container: 80rem;
-$weather-icon-width: 14rem;
-$weather-condition-fontsize: 1.5rem;
-$weather-information-width : 44rem;
+//1024 resolution
 
 //Mixin
 
 //Styles
-.weather-info-container {
-    width: $weather-info-container;
-    height: 70%;
-    display: flex;
-    justify-content: space-evenly;
-
-    .weather-icon {
-        background-color: rgb(51, 55, 66);
-        width: $weather-icon-width;
-        height: 100%;
-        border-radius: 1.5rem;
-        color: white;
-        font-family: "Nunito", sans-serif;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-
-        img {
-            width: 50%;
-        }
-
-        .weather-condition,
-        .weather-temp {
-            font-size: $weather-condition-fontsize;
-        }
-    }
-
-    .weather-information {
-        width: $weather-information-width;
-        border: 1px solid red;
-    }
-}

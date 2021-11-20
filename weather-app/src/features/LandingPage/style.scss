@@ -27,14 +27,14 @@ $p-description-mobile : 0.8rem;
 
     .nav-logo{
         position: fixed;
-        width: 18rem;
+        width: 1024px;
         z-index: 100;
         bottom: 90vh;
-        margin-left: 2vw;
-
+        padding: 0 2%;
+        margin: auto;
+        
         display: flex;
         align-items: center;
-        justify-content: space-around;
         cursor: default;
         background: -webkit-linear-gradient(rgba(255,255,255,10%), rgba(0,0,0,100%));
         -webkit-background-clip: text;
@@ -151,7 +151,7 @@ $p-description-mobile : 0.8rem;
 @media only screen and (max-width:767px) {
     .landing-page{
         .nav-logo{
-            width: 14rem;
+            width: 20rem;
             span {
                 font-size: $h1-description-mobile;
             }

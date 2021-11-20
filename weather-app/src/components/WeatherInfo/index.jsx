@@ -1,21 +1,33 @@
-import React from "react";
-import "./style.scss";
-import PropTypes from "prop-types";
+import PropsTypes from 'prop-types';
+import React from 'react';
+import '../../animated/loading/animated.scss'
+import './style.scss';
 
-WeatherInfo.propTypes = {};
+WeatherInfo.propTypes = {
+  isLoading : PropsTypes.bool.isRequired,
+  isLoadingTime : PropsTypes.bool.isRequired,
+  data : PropsTypes.object,
+  imagePath :PropsTypes.string
+};
 
-function WeatherInfo(props) {
-  return (
-    <div className="weather-info-container">
-      <div className="weather-icon">
-        <div className="weather-condition">Sunny</div>
-        <img src={process.env.PUBLIC_URL + "/animated/clear-day.svg"} alt="" />
-        <div className="weather-temp">19 °C</div>
-      </div>
-      <div className="weather-information">
-        
-      </div>
+WeatherInfo.defaultProps = {
+  data : null,
+  imagePath : null
+}
+
+function WeatherInfo({isLoading,data,isLoadingTime,date,imagePath}) {
+
+  const isLoadingJSX = (
+    <div className="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+  ); // JSX cho loading
+
+  return (
+<div></div>
   );
 }
 

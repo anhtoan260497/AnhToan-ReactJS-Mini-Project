@@ -1,7 +1,7 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import LandingPage from './features/LandingPage';
-import { Switch , Route} from 'react-router-dom'
 import Homepage from './features/Homepage';
+import LandingPage from './features/LandingPage';
 
 function App() {
   return (

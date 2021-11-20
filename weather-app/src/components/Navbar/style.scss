@@ -1,0 +1,180 @@
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap");
+
+//Variables
+$navbar-container-width: 1200px;
+$navbar-container-width-tablet: 1024px;
+$navbar-container-width-mobile: 767px;
+
+//Mixin
+
+//Styles
+.navbar-container-fluid {
+    width: 100vw;
+    background-color: rgba(16, 16, 20, 20%);
+    height: 6rem;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 0 0 1rem 1rem;
+
+    .navbar-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo-area {
+            width: calc(#{$navbar-container-width}/ 12 * 3); // 3 col
+            opacity: 1;
+            display: flex;
+            align-items: center;
+
+            h1 {
+                font-size: 1.5rem;
+                background: -webkit-linear-gradient(rgba(255, 255, 255, 0%), rgba(0, 0, 0, 100%));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: "Shippori Antique B1", sans-serif;
+            }
+
+            img {
+                width: 6rem;
+            }
+        }
+
+        .navigation-area {
+            width: calc(#{$navbar-container-width}/ 12 * 5);
+            display: flex;
+            justify-content: space-around;
+
+            a {
+                width: calc(#{$navbar-container-width}/ 12 * 1);
+                font-family: "Shippori Antique B1", sans-serif;
+                text-decoration: none;
+                color: black;
+            }
+
+            input {
+                width: calc(#{$navbar-container-width}/ 12 * 2.5);
+                border-radius: 2rem;
+                height: 2rem;
+                border: none;
+                outline: none;
+                transition: outline 0.3s;
+                font-family: "Shippori Antique B1", sans-serif;
+
+                &:focus {
+                    border: 2px solid hsl(202, 75%, 70%);
+                    transition: all 0.3s;
+                    padding-left: 1rem;
+
+                    &::placeholder {
+                        color: transparent;
+                        transition: all 0.5s;
+                    }
+                }
+
+                &::placeholder {
+                    text-align: center;
+                }
+            }
+        }
+
+        .navigation-area-mobile {
+            @extend .navigation-area;
+            display: none;
+        }
+    }
+}
+
+//hover animation
+.navbar-container-fluid:hover {
+    background-color: rgba(16, 16, 20, 100%);
+    transition: background-color 0.3s ease-in-out;
+
+    .navbar-container {
+        
+        .logo-area {
+            h1 {
+                background: -webkit-linear-gradient(rgba(255, 255, 255, 100%), rgba(255, 255, 255, 100%));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        .navigation-area {
+            a {
+                color: white;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: rgb(155, 233, 233);
+                    transition: all 0.3s;
+                    text-decoration: underline white;
+                }
+            }
+        }
+    }
+}
+
+//Media Query
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    .navbar-container-fluid {
+        .navbar-container {
+            .logo-area {
+                width: calc(#{$navbar-container-width-tablet}/ 12 * 3); // 3 col
+
+                h1 {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .navigation-area {
+        
+                width: calc(#{$navbar-container-width-tablet}/ 12 * 4);
+                display: flex;
+                justify-content: space-around;
+
+                a {
+                    width: calc(#{$navbar-container-width-tablet}/ 12 * 1);
+                }
+
+                input {
+                    width: calc(#{$navbar-container-width-tablet}/ 12 * 2);
+                }
+            }
+
+            .navigation-area-mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-container-fluid {
+        .navbar-container {
+            width: 90%;
+            .logo-area {
+                width: calc(#{$navbar-container-width-mobile}/ 12  * 8 ); // 3 col
+                h1 {
+                    font-size: 0.9rem;
+                }
+            }
+
+            .navigation-area {
+                display: none;
+            }
+            .navigation-area-mobile {
+
+                display: flex;
+                justify-content: flex-end;
+
+                input {
+                    width: calc(#{$navbar-container-width-mobile}/ 12 * 2.5);
+                }
+            }
+        }
+    }
+}
