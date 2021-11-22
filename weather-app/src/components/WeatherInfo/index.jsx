@@ -1,33 +1,37 @@
-import PropsTypes from 'prop-types';
-import React from 'react';
-import '../../animated/loading/animated.scss'
+import React, { useEffect, useState } from 'react';
+import '../../animated/loading/animated.scss';
+import Clock from '../Clock';
+import WeatherCondition from '../WeatherCondition';
 import './style.scss';
+import PropTypes from 'prop-types'
 
 WeatherInfo.propTypes = {
-  isLoading : PropsTypes.bool.isRequired,
-  isLoadingTime : PropsTypes.bool.isRequired,
-  data : PropsTypes.object,
-  imagePath :PropsTypes.string
+  isDay : PropTypes.bool.isRequired,
+  isLoading : PropTypes.bool.isRequired,
+  imagePath : PropTypes.string.isRequired,
+  data : PropTypes.object.isRequired,
 };
 
-WeatherInfo.defaultProps = {
-  data : null,
-  imagePath : null
-}
 
-function WeatherInfo({isLoading,data,isLoadingTime,date,imagePath}) {
+function WeatherInfo({isDay,isLoading, imagePath,data }) {
 
-  const isLoadingJSX = (
-    <div className="lds-ellipsis">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  ); // JSX cho loading
+  const [backgroundImage, setbackgroundImage] = useState('weather-info-container');
+
+  useEffect(() => {
+    if (isDay) {
+      setbackgroundImage('weather-info-container day-background');
+    } else {
+      setbackgroundImage('weather-info-container night-background');
+    }
+  }, [isDay]);
 
   return (
-<div></div>
+    <div className={backgroundImage}>
+      <div className="linear-background">
+        <Clock/>
+        <WeatherCondition isLoading={isLoading} imagePath={imagePath} data={data}/>
+      </div>
+    </div>
   );
 }
 

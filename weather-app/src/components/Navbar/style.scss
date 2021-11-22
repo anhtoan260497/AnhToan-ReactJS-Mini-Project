@@ -11,10 +11,11 @@ $navbar-container-width-mobile: 767px;
 //Styles
 .navbar-container-fluid {
     width: 100vw;
-    background-color: rgba(16, 16, 20, 20%);
+    position:fixed;
+    background-color: rgba(16, 16, 20, 40%);
     height: 6rem;
     transition: background-color 0.3s ease-in-out;
-    border-radius: 0 0 1rem 1rem;
+
 
     .navbar-container {
         width: 90%;
@@ -22,6 +23,10 @@ $navbar-container-width-mobile: 767px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        a {
+            text-decoration: none;
+        }
 
         .logo-area {
             width: calc(#{$navbar-container-width}/ 12 * 3); // 3 col
@@ -31,7 +36,7 @@ $navbar-container-width-mobile: 767px;
 
             h1 {
                 font-size: 1.5rem;
-                background: -webkit-linear-gradient(rgba(255, 255, 255, 0%), rgba(0, 0, 0, 100%));
+                background: -webkit-linear-gradient(rgba(255, 255, 255, 100%), rgba(255, 255, 255, 100%));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 font-family: "Shippori Antique B1", sans-serif;
@@ -46,12 +51,15 @@ $navbar-container-width-mobile: 767px;
             width: calc(#{$navbar-container-width}/ 12 * 5);
             display: flex;
             justify-content: space-around;
+            color:white;
 
             a {
                 width: calc(#{$navbar-container-width}/ 12 * 1);
                 font-family: "Shippori Antique B1", sans-serif;
                 text-decoration: none;
-                color: black;
+                background: -webkit-linear-gradient(rgba(255, 255, 255, 100%), rgba(255, 255, 255, 100%));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
 
             input {
@@ -60,13 +68,15 @@ $navbar-container-width-mobile: 767px;
                 height: 2rem;
                 border: none;
                 outline: none;
-                transition: outline 0.3s;
+                transition: all 0.3s;
                 font-family: "Shippori Antique B1", sans-serif;
+                padding-left:1rem;
+                
 
                 &:focus {
                     border: 2px solid hsl(202, 75%, 70%);
                     transition: all 0.3s;
-                    padding-left: 1rem;
+                    padding-left: 1.2rem;
 
                     &::placeholder {
                         color: transparent;
@@ -74,9 +84,6 @@ $navbar-container-width-mobile: 767px;
                     }
                 }
 
-                &::placeholder {
-                    text-align: center;
-                }
             }
         }
 
@@ -157,7 +164,7 @@ $navbar-container-width-mobile: 767px;
         .navbar-container {
             width: 90%;
             .logo-area {
-                width: calc(#{$navbar-container-width-mobile}/ 12  * 8 ); // 3 col
+                width: calc(#{$navbar-container-width-mobile}/ 12  * 3 ); // 3 col
                 h1 {
                     font-size: 0.9rem;
                 }
@@ -172,7 +179,8 @@ $navbar-container-width-mobile: 767px;
                 justify-content: flex-end;
 
                 input {
-                    width: calc(#{$navbar-container-width-mobile}/ 12 * 2.5);
+                    width: calc(#{$navbar-container-width-mobile}/ 12 * 2);
+                    font-size: 0.65rem;
                 }
             }
         }

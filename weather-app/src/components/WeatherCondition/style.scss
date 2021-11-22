@@ -1,0 +1,113 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+//variables
+
+//mixin
+
+//styles
+.weather-condition-container {
+    width: 100vw;
+    height: 10rem;
+    font-family: "Nunito", sans-serif;
+
+    .weather-icon {
+        width: 10rem;
+        margin: auto;
+
+        img {
+            width: 10rem;
+        }
+    }
+
+    .weather-condition-info {
+        width: 60rem;
+        display: flex;
+        height: 6rem;
+        justify-content: space-between;
+        margin: auto;
+
+        .temp, .name, .location {
+            width: 18rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-transform: capitalize;
+
+            .icon {
+                width: 5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    .weather-condition-container {
+
+        .weather-condition-info {
+            width: 40rem;
+            display: flex;
+            height: 6rem;
+            justify-content: space-between;
+            margin: auto;
+
+            .temp, .name, .location {
+                width: 15rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3rem;
+                .icon {
+                    width: 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .weather-condition-container {
+        height: 6rem;
+        .weather-icon {
+            width: 6rem;
+        }
+
+        .weather-condition-info {
+            width: 100vw;
+            display: flex;
+            height: 6rem;
+            justify-content: space-between;
+            margin: auto;
+
+            hr {
+                display: none;
+            }
+    
+            .temp, .name {
+                width: 18rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                .icon {
+                    width: 3rem;
+                }
+            }
+
+            .location {
+                width: 20rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                .icon {
+                    width: 3rem;
+                }
+            }
+        }
+    }
+}
