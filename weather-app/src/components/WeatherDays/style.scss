@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+.weatherdays-container-fluid {
+    width: 100vw;
+    margin-top: 1rem;
+
+    .weatherdays-container {
+        width: 90%;
+        height: 11.6rem;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Nunito", sans-serif;
+
+        .weatherdays-item {
+            width: 10rem;
+            height: 100%;
+            text-align: center;
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            img {
+                width: 7rem;
+            }
+            
+        }
+    }
+}

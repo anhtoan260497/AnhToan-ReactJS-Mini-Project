@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import './style.scss';
-import '../../animated/loading/animated.scss';
 import PropTypes from 'prop-types';
+import React from 'react';
+import '../../animated/loading/animated.scss';
+import './style.scss';
 
 WeatherCondition.propTypes = {
-  isLoading : PropTypes.bool.isRequired,
+  isLoadingCurrent : PropTypes.bool.isRequired,
   imagePath : PropTypes.string.isRequired,
-  data : PropTypes.object
+  dataCurrent : PropTypes.array,
 };
 
-function WeatherCondition({ isLoading, imagePath, data }) {
+function WeatherCondition({ isLoadingCurrent, imagePath, dataCurrent }) {
   const isLoadingJSX = (
     <div className="lds-ellipsis">
       <div></div>
@@ -18,31 +18,29 @@ function WeatherCondition({ isLoading, imagePath, data }) {
       <div></div>
     </div>
   ); // JSX cho loading
-  useEffect(() => {
-    console.log(data);
-    console.log(isLoading)
-  }, [isLoading]);
+
+
 
 
   return (
 
     <div className="weather-condition-container">
       <div className="weather-icon">
-       {!isLoading ?  <img src={process.env.PUBLIC_URL + imagePath} alt="" /> : isLoadingJSX}
+       {!isLoadingCurrent ?  <img src={process.env.PUBLIC_URL + imagePath} alt="" /> : isLoadingJSX}
       </div>
       <div className="weather-condition-info">
         <div className="temp">
-          {!isLoading ? <><img className="icon" src={process.env.PUBLIC_URL + './animated/thermometer.svg'} alt="" />{' '}
-          <span>{Math.floor(data.main.temp - 273.15)} °C</span></> : isLoadingJSX }
+          {!isLoadingCurrent ? <><img className="icon" src={process.env.PUBLIC_URL + './animated/thermometer.svg'} alt="" />{' '}
+          <span>{Math.floor(dataCurrent[0].main.temp - 273.15)} °C</span></> : isLoadingJSX }
         </div>
         <hr />
         <div className="name">
-         { !isLoading ?  <><img className="icon" src={process.env.PUBLIC_URL + imagePath} alt="" /> <span>{data.weather[0].description}</span></> : isLoadingJSX}
+         { !isLoadingCurrent ?  <><img className="icon" src={process.env.PUBLIC_URL + imagePath} alt="" /> <span>{dataCurrent[0].weather[0].description}</span></> : isLoadingJSX}
         </div>
         <hr />
         <div className="location">
-        { !isLoading ?  <><img className="icon" src="https://bmcdn.nl/assets/weather-icons/v2.1/fill/compass.svg" alt="" />{' '}
-          <span>{`${data.name}, ${data.sys.country}`}</span></> : isLoadingJSX}
+        { !isLoadingCurrent ?  <><img className="icon" src="https://bmcdn.nl/assets/weather-icons/v2.1/fill/compass.svg" alt="" />{' '}
+          <span>{`${dataCurrent[0].name}, ${dataCurrent[0].sys.country}`}</span></> : isLoadingJSX}
         </div>
       </div>
     </div>

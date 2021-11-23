@@ -48,9 +48,9 @@ $navbar-container-width-mobile: 767px;
         }
 
         .navigation-area {
-            width: calc(#{$navbar-container-width}/ 12 * 5);
+            width: calc(#{$navbar-container-width}/ 12 * 4);
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             color:white;
 
             a {

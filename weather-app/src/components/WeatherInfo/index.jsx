@@ -4,16 +4,19 @@ import Clock from '../Clock';
 import WeatherCondition from '../WeatherCondition';
 import './style.scss';
 import PropTypes from 'prop-types'
+import WeatherDays from '../WeatherDays';
 
 WeatherInfo.propTypes = {
   isDay : PropTypes.bool.isRequired,
-  isLoading : PropTypes.bool.isRequired,
+  isLoadingCurrent : PropTypes.bool.isRequired,
   imagePath : PropTypes.string.isRequired,
-  data : PropTypes.object.isRequired,
+  dataCurrent : PropTypes.array,
+  data7Days : PropTypes.array.isRequired,
+  imagePath7Days : PropTypes.array.isRequired
 };
 
 
-function WeatherInfo({isDay,isLoading, imagePath,data }) {
+function WeatherInfo({isDay,isLoadingCurrent, imagePath,dataCurrent ,data7Days,imagePath7Days}) {
 
   const [backgroundImage, setbackgroundImage] = useState('weather-info-container');
 
@@ -29,7 +32,8 @@ function WeatherInfo({isDay,isLoading, imagePath,data }) {
     <div className={backgroundImage}>
       <div className="linear-background">
         <Clock/>
-        <WeatherCondition isLoading={isLoading} imagePath={imagePath} data={data}/>
+        <WeatherCondition isLoadingCurrent={isLoadingCurrent} imagePath={imagePath} dataCurrent={dataCurrent}/>
+        <WeatherDays data7Days={data7Days} imagePath7Days={imagePath7Days}/>
       </div>
     </div>
   );
