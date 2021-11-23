@@ -17,7 +17,7 @@ const isLoadingJSX = (
     return (
         <div className="time-container-fluid">
            {isLoadingTime ? isLoadingJSX : <div className="time-container">
-                <p>{`${date}  ${day} - ${month} - ${year} | ${time}` }</p>
+                <p>{`${date}  ${day} - ${month+1} - ${year} | ${time}` }</p>
             </div>}
             
         </div>

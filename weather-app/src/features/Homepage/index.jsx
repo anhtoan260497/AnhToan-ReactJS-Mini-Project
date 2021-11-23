@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import curentWeatherApi from '../../api/currentWeatherApi';
 import Navbar from '../../components/Navbar';
-import WeatherDays from '../../components/WeatherDays';
 import WeatherInfo from '../../components/WeatherInfo';
 import useClock from '../../hooks/useClock';
 import useImagePath from '../../hooks/useImagePath';
@@ -50,7 +49,7 @@ function Homepage() {
   return (
     <div>
       <Navbar />
-      <WeatherInfo isDay={isDay} isLoadingCurrent={isLoadingCurrent} imagePath={imagePath} imagePath7Days={imagePath7Days} dataCurrent={dataCurrent} data7Days={data7Days} />
+      <WeatherInfo isDay={isDay} isLoadingCurrent={isLoadingCurrent} imagePath={imagePath} imagePath7Days={imagePath7Days} dataCurrent={dataCurrent} data7Days={data7Days} isLoading7Days={isLoading7Days} />
     </div>
   );
 }

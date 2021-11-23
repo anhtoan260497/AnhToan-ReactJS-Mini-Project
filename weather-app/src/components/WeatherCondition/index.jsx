@@ -5,7 +5,7 @@ import './style.scss';
 
 WeatherCondition.propTypes = {
   isLoadingCurrent : PropTypes.bool.isRequired,
-  imagePath : PropTypes.string.isRequired,
+  imagePath : PropTypes.array.isRequired,
   dataCurrent : PropTypes.array,
 };
 
@@ -35,7 +35,7 @@ function WeatherCondition({ isLoadingCurrent, imagePath, dataCurrent }) {
         </div>
         <hr />
         <div className="name">
-         { !isLoadingCurrent ?  <><img className="icon" src={process.env.PUBLIC_URL + imagePath} alt="" /> <span>{dataCurrent[0].weather[0].description}</span></> : isLoadingJSX}
+         { !isLoadingCurrent ?  <><img className="icon" src={process.env.PUBLIC_URL + imagePath[0]} alt="" /> <span>{dataCurrent[0].weather[0].description}</span></> : isLoadingJSX}
         </div>
         <hr />
         <div className="location">

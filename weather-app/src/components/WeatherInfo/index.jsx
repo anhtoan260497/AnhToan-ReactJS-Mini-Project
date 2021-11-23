@@ -9,7 +9,7 @@ import WeatherDays from '../WeatherDays';
 WeatherInfo.propTypes = {
   isDay : PropTypes.bool.isRequired,
   isLoadingCurrent : PropTypes.bool.isRequired,
-  imagePath : PropTypes.string.isRequired,
+  imagePath : PropTypes.array.isRequired,
   dataCurrent : PropTypes.array,
   data7Days : PropTypes.array.isRequired,
   imagePath7Days : PropTypes.array.isRequired

@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function useImagePath(data, isDay) {
   const [imagePath, setImagePath] = useState([]);
@@ -10,7 +10,7 @@ function useImagePath(data, isDay) {
         case 201:
         case 202:
         case 210:
-          setImagePath('/animated/thunderstorms-rain.svg');
+          setImagePath(['/animated/thunderstorms-rain.svg']);
           break;
         case 211:
         case 212:
@@ -18,7 +18,7 @@ function useImagePath(data, isDay) {
         case 230:
         case 231:
         case 232:
-          setImagePath('/animated/thunderstorms.svg');
+          setImagePath(['/animated/thunderstorms.svg']);
           break;
         case 300:
         case 301:
@@ -29,7 +29,7 @@ function useImagePath(data, isDay) {
         case 313:
         case 314:
         case 321:
-          setImagePath('/animated/drizzle.svg');
+          setImagePath(['/animated/drizzle.svg']);
           break;
         case 500:
         case 501:
@@ -41,7 +41,7 @@ function useImagePath(data, isDay) {
         case 521:
         case 522:
         case 531:
-          setImagePath('/animated/rain.svg');
+          setImagePath(['/animated/rain.svg']);
           break;
         case 600:
         case 601:
@@ -54,29 +54,29 @@ function useImagePath(data, isDay) {
         case 620:
         case 621:
         case 622:
-          setImagePath('/animated/snow.svg');
+          setImagePath(['/animated/snow.svg']);
           break;
         case 701:
-          setImagePath('/animated/mist.svg');
+          setImagePath(['/animated/mist.svg']);
           break;
         case 741:
-          setImagePath('/animated/fog.svg');
+          setImagePath(['/animated/fog.svg']);
           break;
         case 781:
-          setImagePath('/animated/tornado.svg');
+          setImagePath(['/animated/tornado.svg']);
           break;
         case 800:
           if (isDay) {
-            setImagePath('/animated/clear-day.svg');
+            setImagePath(['/animated/clear-day.svg']);
           } else {
-            setImagePath('/animated/clear-night/svg');
+            setImagePath(['/animated/clear-night/svg']);
           }
           break;
         case 801:
         case 802:
         case 803:
         case 804:
-          setImagePath('/animated/overcast.svg');
+          setImagePath(['/animated/overcast.svg']);
           break;
         default:
           return null;
