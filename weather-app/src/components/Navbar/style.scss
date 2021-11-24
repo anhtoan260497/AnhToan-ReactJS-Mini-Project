@@ -72,6 +72,7 @@ $navbar-container-width-mobile: 767px;
                 transition: all 0.3s;
                 font-family: "Shippori Antique B1", sans-serif;
                 text-align: center;
+                font-size: 0.8em;
                 
 
                 &:focus {
@@ -81,6 +82,7 @@ $navbar-container-width-mobile: 767px;
                     text-align: left;
 
                     &::placeholder {
+                        font-size: 1.2rem;
                         color: transparent;
                         transition: all 0.5s;
                         text-align: center;
@@ -89,6 +91,14 @@ $navbar-container-width-mobile: 767px;
 
             }
         }
+    }
+}
+
+.search{
+    &:hover{
+       font-size: 1.1rem;
+       transition: all 0.2s;
+       bottom:0.1rem;
     }
 }
 

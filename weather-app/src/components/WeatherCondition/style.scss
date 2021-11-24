@@ -41,6 +41,7 @@
     }
 }
 
+
 @media screen and (max-width: 1023px) and (min-width: 768px) {
     .weather-condition-container {
 
@@ -66,11 +67,13 @@
     }
 }
 
+
 @media screen and (max-width: 767px) {
     .weather-condition-container {
         height: 6rem;
+
         .weather-icon {
-            width: 6rem;
+            width: 10rem;
         }
 
         .weather-condition-info {
