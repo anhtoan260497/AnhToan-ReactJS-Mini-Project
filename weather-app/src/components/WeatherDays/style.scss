@@ -22,6 +22,7 @@
         }
 
         .weatherdays-item {
+            border-top: 1px solid white;;
             width:12vw;
             height: 100%;
             text-align: center;
@@ -95,7 +96,8 @@
 
 
                 .weatherdays-item {
-                    width: 115%;
+                    border-top:none;
+                    width: 110%;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;

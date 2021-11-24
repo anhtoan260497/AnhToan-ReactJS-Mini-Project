@@ -33,6 +33,7 @@ $navbar-container-width-mobile: 767px;
             opacity: 1;
             display: flex;
             align-items: center;
+            cursor: pointer;
 
             h1 {
                 font-size: 1.5rem;
@@ -70,26 +71,23 @@ $navbar-container-width-mobile: 767px;
                 outline: none;
                 transition: all 0.3s;
                 font-family: "Shippori Antique B1", sans-serif;
-                padding-left:1rem;
+                text-align: center;
                 
 
                 &:focus {
                     border: 2px solid hsl(202, 75%, 70%);
                     transition: all 0.3s;
                     padding-left: 1.2rem;
+                    text-align: left;
 
                     &::placeholder {
                         color: transparent;
                         transition: all 0.5s;
+                        text-align: center;
                     }
                 }
 
             }
-        }
-
-        .navigation-area-mobile {
-            @extend .navigation-area;
-            display: none;
         }
     }
 }
@@ -171,16 +169,15 @@ $navbar-container-width-mobile: 767px;
             }
 
             .navigation-area {
-                display: none;
-            }
-            .navigation-area-mobile {
-
                 display: flex;
                 justify-content: flex-end;
 
+                a{
+                    display: none;
+                }
+
                 input {
-                    width: calc(#{$navbar-container-width-mobile}/ 12 * 2);
-                    font-size: 0.65rem;
+                    width: calc(#{$navbar-container-width-mobile}/ 12 * 3);
                 }
             }
         }

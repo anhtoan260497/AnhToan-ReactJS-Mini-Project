@@ -4,6 +4,7 @@ import Homepage from './features/Homepage';
 import LandingPage from './features/LandingPage';
 
 function App() {
+  console.ignoredYellowBox = ["Warning: Each", "Warning: Failed"];
   return (
     <div className="App">
       <Switch>

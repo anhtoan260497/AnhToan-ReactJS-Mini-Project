@@ -17,7 +17,7 @@ function useClock() {
       const day = date.getDate();
       const month = date.getMonth();
       const year = date.getFullYear();
-      const time = `${date.getHours()}: ${date.getMinutes()}: ${date.getSeconds()}`;
+      const time = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
       if(date.getHours() - 12 <= -6 || date.getHours() - 12 >= 6 ){setIsDay(false)} else {setIsDay(true)}
      setDate(weekday)
      setDay(day)

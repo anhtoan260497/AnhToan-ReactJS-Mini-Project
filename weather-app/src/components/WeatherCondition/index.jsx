@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../animated/loading/animated.scss';
 import './style.scss';
 
@@ -39,7 +39,7 @@ function WeatherCondition({ isLoadingCurrent, imagePath, dataCurrent }) {
         </div>
         <hr />
         <div className="location">
-        { !isLoadingCurrent ?  <><img className="icon" src="https://bmcdn.nl/assets/weather-icons/v2.1/fill/compass.svg" alt="" />{' '}
+        { !isLoadingCurrent ?  <><img className="icon" src={process.env.PUBLIC_URL + './animated/compass.svg'} alt="" />{' '}
           <span>{`${dataCurrent[0].name}, ${dataCurrent[0].sys.country}`}</span></> : isLoadingJSX}
         </div>
       </div>
