@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
+
+.header {
+    height: 3rem;
+    border: 1px solid red;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-logo {
+        font-family: "Nunito", sans-serif;
+        font-size: 32px;
+    }
+    .dark-and-light {
+        width: 3rem;
+        height: 3rem;
+        background-repeat: no-repeat;
+        background-position: right;
+        cursor: pointer;
+        transition: background-image 0.5s ease-out;
+    }
+}
