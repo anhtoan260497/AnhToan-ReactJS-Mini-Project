@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+$dark-background:rgb(37,39,61);
+
+.to-do-form{
+    width: 100%;
+    height: 4rem;
+    margin-top: 1rem;  
+    
+    .input {
+        width: 100%;
+        height: 4rem;
+        outline: none;
+        border: none;
+    
+        border-radius: 0.5rem;
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding: 0 1rem;
+        color:black;
+       
+    
+        &:focus {
+            border: 2px solid #dadada;
+            outline: none;
+            border-color: #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
+            transition: all 0.5s;
+        }
+    
+        &:focus::placeholder {
+            color: transparent;
+            transition: all 0.3s ease;
+        }
+    }
+    
+    .dark-form {
+        background-color: $dark-background;
+        color:white;
+
+        &::placeholder {
+            color:white;
+        }
+    }
+
+    .transition{
+        transition: all .5s;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .to-do-form{
+        
+        .input {
+            font-size: 1.2rem;
+        }
+        
+    }
+}
+

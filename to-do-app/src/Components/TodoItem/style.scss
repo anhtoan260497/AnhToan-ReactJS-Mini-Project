@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+$dark-background: rgb(37, 39, 61);
+$first-color-dark: rgba(44, 26, 166, 90%);
+$second-color-dark: rgba(122, 27, 111, 80%);
+$first-color-light: rgba(185, 99, 241, 100%);
+$second-color-light: rgba(110, 160, 250, 100%);
+
+.to-do-item {
+    width: 100%;
+    height: 4rem;
+
+    background-color: white;
+    color: rgb(124, 124, 124);
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    border-bottom: 1px solid rgba(124, 124, 124, 20%);
+
+    &:hover {
+        background-color: rgb(230, 235, 235);
+        transition: all 0.5s;
+    }
+
+    .to-do-description {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn {
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        border: none;
+        cursor: pointer;
+        display: none;
+
+        background-image: linear-gradient(80deg, $first-color-light, $second-color-light);
+        transition: all 0.2s;
+        position: relative;
+        z-index: 10;
+
+        &:active {
+            transform: scale(0.9);
+            transition: all 0.2s;
+        }
+    }
+
+    .btn-show {
+        display: block;
+    }
+
+    .dark-btn {
+        background-image: linear-gradient(80deg, $first-color-dark, $second-color-dark);
+    }
+}
+
+.dark-item {
+    background-color: $dark-background;
+    color: white;
+
+    &:hover {
+        background-color: rgb(17, 14, 14);
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+    text-decoration-color: rgb(124, 124, 124);
+    text-decoration-thickness: 2px;
+}
+
+@media screen and (max-width: 767px) {
+    .to-do-item {
+        font-size: 1rem;
+    }
+}

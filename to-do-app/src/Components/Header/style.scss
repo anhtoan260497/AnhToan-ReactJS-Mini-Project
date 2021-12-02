@@ -2,7 +2,6 @@
 
 .header {
     height: 3rem;
-    border: 1px solid red;
 
     display: flex;
     align-items: center;
@@ -20,4 +19,16 @@
         cursor: pointer;
         transition: background-image 0.5s ease-out;
     }
+}
+
+@media screen and (max-width : 767px) {
+    .header {
+        &-logo {
+            font-size: 24px;
+        }
+        .dark-and-light {
+            width: 2rem;
+            height: 2rem;
+        }
+    } 
 }

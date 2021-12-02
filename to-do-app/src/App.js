@@ -2,6 +2,8 @@ import Header from "./Components/Header";
 import "./App.scss";
 import { useState } from "react";
 import clsx from "clsx";
+import TodoList from "./Components/TodoList";
+import { GithubOutlined } from "@ant-design/icons";
 
 function App() {
   //State
@@ -32,19 +34,31 @@ function App() {
       <div className="background">
         <header
           className={clsx("background-top", {
-            'dark': isDark ? true : false,
-            'light': !isDark ? true : false,
+            dark: isDark ? true : false,
+            light: !isDark ? true : false,
           })}
         ></header>
-        <footer className={clsx("background-bottom",'transition',{
-          'dark-bottom' : isDark ? true :false,
-          'light-bottom' : !isDark ? true :false  
-        })}>
-        </footer>
+        <footer
+          className={clsx("background-bottom", "transition", {
+            "dark-bottom": isDark ? true : false,
+            "light-bottom": !isDark ? true : false,
+          })}
+        ></footer>
       </div>
       <div className="content">
         <Header isDark={isDark} handleClickIcon={handleClickIcon} icon={icon} />
+        <TodoList isDark={isDark} />
       </div>
+
+      <a
+        style={{ position: "fixed", left: "49%", top: "80%" }}
+        href="https://github.com/anhtoan260497"
+        target="_blank"
+        rel="noreferrer"
+        title="my Github"
+      >
+        <GithubOutlined style={{ fontSize: "2rem", color: "white" }} />
+      </a>
     </div>
   );
 }
