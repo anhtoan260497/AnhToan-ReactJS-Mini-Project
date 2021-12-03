@@ -4,7 +4,7 @@ import TodoItems from "../TodoItems";
 import TodoOptions from "../TodoOptions";
 
 function TodoList({ isDark }) {
-  const [todo, setTodo] = useState([]);
+  const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todoList')) ||[]);
   const [todoRender, setTodoRender] = useState(todo);
   const [status, setStatus] = useState("all");
 
@@ -18,6 +18,7 @@ function TodoList({ isDark }) {
     if(idx !== -1) return
 
     const newTodo = [...todo, newTodoInput];
+    localStorage.setItem('todoList',JSON.stringify(newTodo))
     setTodo(newTodo);
   };
 
@@ -52,6 +53,7 @@ function TodoList({ isDark }) {
     if (status === "all") {
       const newTodoList = [...todo];
       newTodoList[idx].completed = true;
+      localStorage.setItem('todoList',JSON.stringify(newTodoList))
       setTodo(newTodoList);
 
     } else if (status === "active") {
@@ -59,6 +61,7 @@ function TodoList({ isDark }) {
       const target = todoRender[idx].job
       const indexOfItem = newTodoList.findIndex(item => target === item.job)
       newTodoList[indexOfItem].completed =  true
+      localStorage.setItem('todoList',JSON.stringify(newTodoList))
       setTodo(newTodoList)
     }
   };
