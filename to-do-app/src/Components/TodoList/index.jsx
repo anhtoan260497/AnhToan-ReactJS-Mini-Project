@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoForm from "../../Components/TodoForm";
 import TodoItems from "../TodoItems";
 import TodoOptions from "../TodoOptions";
 
 function TodoList({ isDark }) {
-  const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todoList')) ||[]);
+  const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todoList')),[]);
   const [todoRender, setTodoRender] = useState(todo);
   const [status, setStatus] = useState("all");
 
@@ -70,6 +70,7 @@ function TodoList({ isDark }) {
   const handleClickButton = (idx) => {
     const newTodoList = [...todo];
     newTodoList.splice(idx, 1);
+    localStorage.setItem('todoList',JSON.stringify(newTodoList))
     setTodo(newTodoList);
   };
 
@@ -80,6 +81,7 @@ function TodoList({ isDark }) {
 
   // Click nút Clear
   const handleClearClick = () => {
+    localStorage.setItem('todoList',"[]")
     setTodo([]);
   };
 
