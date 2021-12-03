@@ -7,7 +7,6 @@ function TodoList({ isDark }) {
   const [todo, setTodo] = useState([]);
   const [todoRender, setTodoRender] = useState(todo);
   const [status, setStatus] = useState("all");
-  const todoAll = useRef([]); // tạo Ref để giữ giá trị của mảng todo All
 
   // Submit 
   const handleTodoFormSubmit = (values) => {
@@ -15,13 +14,13 @@ function TodoList({ isDark }) {
       job: values.todo,
       completed: false,
     };
+    const idx = todo.findIndex(item => values.todo === item.job ) // nếu có job rồi thì không add nữa
+    if(idx !== -1) return
+
     const newTodo = [...todo, newTodoInput];
     setTodo(newTodo);
   };
 
-  useEffect(() => {
-    todoAll.current = todo;
-  }, [todo]); // gán todo hiện tại cho Ref todo All
 
 
   //useEffect cho việc hiển thị số lượng công việc tuỳ vào trạng thái
@@ -51,16 +50,17 @@ function TodoList({ isDark }) {
   const handleClickItem = (idx) => {
     if (todo[idx].completed === "true") return;
     if (status === "all") {
-      const newTodoList = [...todoAll.current];
+      const newTodoList = [...todo];
       newTodoList[idx].completed = true;
       setTodo(newTodoList);
-    } else if (status === "active") {
-      const newTodoList = [...todoRender];
-      newTodoList[idx].completed = true;
-      setTodo(newTodoList);
-    }
 
-    console.log(idx);
+    } else if (status === "active") {
+      const newTodoList = [...todo];
+      const target = todoRender[idx].job
+      const indexOfItem = newTodoList.findIndex(item => target === item.job)
+      newTodoList[indexOfItem].completed =  true
+      setTodo(newTodoList)
+    }
   };
 
   // Click nút xoá
