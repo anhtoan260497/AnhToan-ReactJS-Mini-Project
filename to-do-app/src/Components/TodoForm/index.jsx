@@ -26,7 +26,7 @@ function TodoForm({isDark,handleTodoFormSubmit}) {
           'dark-form' : !isDark ? false : true
         })}
         type="text"
-        placeholder="Create a new todo..."
+        placeholder="Enter todo and press Enter"
         autoComplete = "off"
       />
     </form>

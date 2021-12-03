@@ -4,11 +4,7 @@ import TodoItems from "../TodoItems";
 import TodoOptions from "../TodoOptions";
 
 function TodoList({ isDark }) {
-  const [todo, setTodo] = useState([
-    { job: "Học JavaScript", completed: false },
-    { job: "Học React", completed: false },
-    { job: "Học NodeJS", completed: false },
-  ]);
+  const [todo, setTodo] = useState([]);
   const [todoRender, setTodoRender] = useState(todo);
   const [status, setStatus] = useState("all");
 
@@ -72,7 +68,7 @@ function TodoList({ isDark }) {
       />
       {todo.length > 0 ? (
         <TodoOptions
-          quantity={todo.length}
+          quantity={todoRender.length}
           isDark={isDark}
           handleStatusClick={handleStatusClick}
           handleClearClick={handleClearClick}

@@ -15,7 +15,7 @@ function TodoOptions({isDark,quantity,handleStatusClick,handleClearClick}) {
         <div className={clsx('options',{
             'dark-options' : isDark ? true :false
         })}>
-            <div className="options-items-left"> {quantity} {quantity > 1 ? 'items' : 'item' } left</div>
+            <div className="options-items-left"> {quantity} {quantity > 1 ? 'items' : 'item' }</div>
             <div className="options-status">
                 <div onClick={() => handleStatusClick('all')} >All</div>
                 <div onClick={() => handleStatusClick('active')} >Active</div>

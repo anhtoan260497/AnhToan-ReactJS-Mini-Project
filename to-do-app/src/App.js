@@ -51,13 +51,13 @@ function App() {
       </div>
 
       <a
-        style={{ position: "fixed", left: "49%", top: "80%" }}
+        style={{ position: "fixed", left: "49%", top: "90%" }}
         href="https://github.com/anhtoan260497"
         target="_blank"
         rel="noreferrer"
         title="my Github"
       >
-        <GithubOutlined style={{ fontSize: "2rem", color: "white" }} />
+       {isDark ?  <GithubOutlined style={{ fontSize: "2rem", color: "white" }} /> : <GithubOutlined style={{ fontSize: "2rem", color: "black" }} />}
       </a>
     </div>
   );
