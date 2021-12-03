@@ -103,7 +103,6 @@ function TodoList({ isDark }) {
           status={status}
         />
       ) : null}
-      {console.log(todoRender.length)}
     </div>
   );
 }
