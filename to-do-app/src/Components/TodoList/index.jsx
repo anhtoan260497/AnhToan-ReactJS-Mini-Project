@@ -4,7 +4,7 @@ import TodoItems from "../TodoItems";
 import TodoOptions from "../TodoOptions";
 
 function TodoList({ isDark }) {
-  const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todoList')),[]);
+  const [todo, setTodo] = useState(JSON.parse(localStorage.getItem('todoList')) || []);
   const [todoRender, setTodoRender] = useState(todo);
   const [status, setStatus] = useState("all");
 
@@ -103,6 +103,7 @@ function TodoList({ isDark }) {
           status={status}
         />
       ) : null}
+      {console.log(todoRender.length)}
     </div>
   );
 }
