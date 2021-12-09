@@ -1,0 +1,64 @@
+.playzone {
+    max-width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    z-index: 1;
+
+    .box {
+        width: 100px;
+        height: 100px;
+        border: 3px solid black;
+
+        &-1 {
+            border-top: none;
+            border-left: none;
+        }
+        &-2 {
+            border-top: none;
+        }
+        &-3 {
+            border-right: none;
+            border-top: none;
+        }
+        &-4 {
+            border-left: none;
+        }
+        &-6 {
+            border-right: none;
+        }
+        &-7 {
+            border-left: none;
+            border-bottom: none;
+        }
+        &-8 {
+            border-bottom: none;
+        }
+        &-9 {
+            border-right: none;
+            border-bottom: none;
+        }
+    }
+    .x {
+        background-image: url('./X.svg') ;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .o{
+        background-image: url('./O.svg') ;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+
+    .game-logo {
+        width: 2rem;
+        border:1px solid red;
+    }
+}
+
+.transition{
+    transition: all 2s ease;
+}

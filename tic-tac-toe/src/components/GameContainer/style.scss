@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
+@mixin flex($justify: flex-start, $align: flex-start, $dicrection: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dicrection;
+}
+
+.game-container {
+    max-width: 700px;
+    margin: 4rem auto 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    font-family: "Gochi Hand", cursive;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .game-logo {
+        width: 69px;
+        display: flex;
+        justify-content: center;
+
+        .non-active {
+            opacity: 0.2;
+        }
+    }
+
+    .transition {
+        transition: opacity 1s ease;
+    }
+
+    .final {
+        position: absolute;
+        opacity: 1;
+        margin: 0 -2rem;
+        width: 700px;
+        height: 400px;
+        z-index: 100;
+        background-color: rgba(2, 4, 5, 80%);
+        border-radius: 1rem;
+
+        @include flex(space-around, center, column);
+
+        &-title {
+            font-family: "Gochi Hand", cursive;
+            font-size: 48px;
+            color: white;
+            width: 20rem;
+
+            @include flex(space-evenly, center);
+        }
+
+        &-score {
+            width: 20rem;
+            border: 1px solid white;
+            height: 10rem;
+            background-color: rgba(222, 222, 222, 90%);
+
+            border-radius: 1rem;
+            @include flex(center, center);
+            font-size: 96px;
+        }
+
+        &-btn {
+            width: 20rem;
+            @include flex(space-between);
+
+            button {
+                width: 7rem;
+                height: 2rem;
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 1rem;
+                font-family: "Gochi Hand", cursive;
+
+                font-size: 20px;
+                color: white;
+
+                &:hover {
+                    background: linear-gradient(to left, transparent 0%, rgba(200, 202, 200, 40%) 80%) right;
+                    background-size: 200%;
+                    transition: 0.5s ease-out;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@keyframes flow {
+    from {
+        left: 0%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
