@@ -8,4 +8,5 @@
     - CRA 
     - Ant Design icon package
     - Persist state with localStorage
+    - React Hook Form
 
