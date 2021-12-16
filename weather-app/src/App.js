@@ -1,17 +1,22 @@
-import { Route, Switch } from 'react-router-dom';
-import './App.css';
-import Homepage from './features/Homepage';
-import LandingPage from './features/LandingPage';
+import {Route, Switch } from "react-router-dom";
+import "./App.scss";
+import Dashboard from "./components/Dashboard";
+import Favorite from "./components/Favorite";
+import NavigationBar from "./features/NavigationBar";
+import About from './components/About'
 
 function App() {
-  console.ignoredYellowBox = ["Warning: Each", "Warning: Failed"];
   return (
-    <div className="App">
-      <Switch>
-      <Route path="/" component={LandingPage} exact />
-      <Route path="/home" component={Homepage} />
-     </Switch>
-    </div>
+      <div className="App">
+        <NavigationBar />
+        <div className="content">
+          <Switch>
+           <Route path="/Dashboard" exact component={Dashboard}/>
+           <Route path="/Favorite" exact component={Favorite}/>
+           <Route path="/About" exact component={About}/>
+          </Switch>
+        </div>
+      </div>
   );
 }
 

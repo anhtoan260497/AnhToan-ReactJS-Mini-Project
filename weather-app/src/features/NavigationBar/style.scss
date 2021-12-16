@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400&display=swap');
+
+$bg-nav-light:rgb(97,101,248) ; 
+$bg-nav-dark : rgb(45,45,45);
+
+$nav_container--list-width-pc : 30rem;
+
+@mixin flex($justify : flex-start, $align:flex-start, $wrap: wrap,$direction : row ){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+}
+
+
+    .nav_container--list {
+        width : $nav_container--list-width-pc;
+        border:1px solid blue;
+        background-color: $bg-nav-light;
+        padding: 2rem;
+
+
+        .nav_logo--container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(96,97,247) ;
+
+            img {
+                width: 8rem;
+                color:white;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                color:white;
+                font-family: 'Balsamiq Sans', cursive;
+            }
+
+        }
+
+        .nav_menu--items {
+            width: $nav_container--list-width-pc;
+            margin : 2rem -2rem ;
+            cursor: pointer;
+            
+
+            .nav_menu-item {
+                margin : 0 0 2rem 0 ;
+                height: 4rem;
+                font-size: 2rem;
+                padding : 0 2rem;
+                text-decoration: none;
+
+                
+                color:white;
+                font-family: 'Mukta', sans-serif;
+                @include flex(flex-start,center );
+
+                background-image: transparent;
+
+            }
+
+            .active {
+                // border:1px solid red;
+            
+                border-left: 3px solid white;
+                background-image:linear-gradient(90deg,rgba(255,255,255,20%),transparent) ;
+            }
+        }
+
+        .nav_btn--nightmode {
+            width: 100%;
+            position: relative;
+            top: 30rem;
+
+            .btn {
+                width: 3rem;
+                height: 3rem;
+                background-color: transparent;
+                border:none; 
+                outline :none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .dark {
+        background-color: $bg-nav-dark;
+        transition: background-color 1s ease ;
+    }
+
+    .transition {
+        transition: background-color 1s ease ;
+    }
