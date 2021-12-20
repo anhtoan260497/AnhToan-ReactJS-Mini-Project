@@ -6,8 +6,15 @@
 
     .content {
         width: calc(100% - 30rem);
-        border: 1px solid blue
+        background-color: white;
+        transition: background-color 1s ease;
+        padding-right : 2rem;
+
     } 
+
+    .dark-bg {
+        background-color: rgb(45,45,45);
+    }
 
 }
 

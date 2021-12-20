@@ -1,19 +1,27 @@
-import {Route, Switch } from "react-router-dom";
+import {Redirect, Route, Switch } from "react-router-dom";
 import "./App.scss";
-import Dashboard from "./components/Dashboard";
-import Favorite from "./components/Favorite";
+import Dashboard from "./features/Content/Page/Dashboard";
+import Favorite from "./features/Content/Page/Favorite";
 import NavigationBar from "./features/NavigationBar";
-import About from './components/About'
+import About from './features/Content/Page/About'
+import clsx from "clsx";
+import { useSelector } from "react-redux";
 
 function App() {
+  
+  const isDay = useSelector((state) => state.isDay.isDay);
+
   return (
       <div className="App">
         <NavigationBar />
-        <div className="content">
+        <div className={clsx("content",{
+          'dark-bg' : !isDay ? true : false
+        })}>
           <Switch>
-           <Route path="/Dashboard" exact component={Dashboard}/>
-           <Route path="/Favorite" exact component={Favorite}/>
-           <Route path="/About" exact component={About}/>
+           <Route path="/Dashboard" component={Dashboard}/>
+           <Route path="/Favorite"  component={Favorite}/>
+           <Route path="/About" component={About}/>
+           <Redirect from='/' to='/Dashboard' />
           </Switch>
         </div>
       </div>

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap");
+
+.condition_container--area {
+    width: 100%;
+    // background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+    font-family: "Quicksand", sans-serif;
+
+    .condition_display--area {
+        width: 45%;
+        height: 25rem;
+        background-position: center;
+        background-size: cover;
+
+        border-radius: 2rem;
+        padding-top: 1rem;
+
+        .condition_weather--image {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            padding-left: 2rem;
+
+            .condition-image{
+                width: 3rem;
+                border-radius: 50%;
+                background-color: gray;
+                
+            }
+        }
+
+        .condition_weather--description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            font-size: 1.2rem;
+            border-radius: 2rem;
+
+            h2 {
+                font-weight: 500;
+            }
+
+            div {
+                font-weight: 300;
+                text-transform: capitalize;
+            }
+        }
+
+        .condition_degree-display{
+            margin : 1rem 0;
+
+            .current-deg{
+                width: 5rem;
+                background-color: white;
+                text-align: center;
+                padding: .5rem;
+
+                border-radius: 2rem;
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+        }
+
+        .condition_info--area{
+            width: 100%;
+            margin : 1rem 0;
+
+            height: 8rem;
+            display: flex;
+            justify-content: space-between;
+            padding : 0 2rem;
+
+            .condition_info--box{
+                width: 30%;
+                border-radius: 1.5rem;
+                padding : 2rem 0 ;
+                text-align: center;
+                font-size: 1.2rem;
+            }
+
+            .pressure, .visibility, .humidity{
+                background-color: rgb(25,40,63);
+                color:white;
+
+                h2 {
+                    margin : 1rem 0 ;
+                }
+            }
+
+            .visibility {
+                background-color: rgb(205,244,106);
+                color:black;
+            }
+            
+            .humidity {
+                background-color: white;
+                color:black
+            }
+
+            
+
+        }
+
+    }
+
+    .condition_aqi--area {
+        width: 45%;
+        height: 25rem;
+        border: 1px solid black;
+    }
+}
+
+.dark-weather-condition{
+    color:white;
+
+    .condition_display--area{
+
+        .condition_degree-display{
+            h3{
+                color:white;
+            }
+
+
+        }
+    }
+}

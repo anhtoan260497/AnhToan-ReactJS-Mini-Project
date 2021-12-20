@@ -1,7 +1,7 @@
 import {
   AppstoreOutlined,
   FileSearchOutlined,
-  GithubOutlined,
+  GithubOutlined
 } from "@ant-design/icons";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,14 +25,14 @@ function NavigationBar() {
 
   return (
       <div
-        className={clsx("nav_container--list", "transition", {
-          dark: !isDay ? true : false,
+        className={clsx("nav_container--list", "nav_background--transition", {
+          'dark-nav': !isDay ? true : false,
         })}
       >
         <div className="nav_logo--container">
           <img src={process.env.PUBLIC_URL + "/logo-day.svg"} alt="" />
 
-          <h1>React Weather</h1>
+          <h1>React Forecast</h1>
         </div>
         <div className="nav_menu--items">
           <Link
@@ -70,6 +70,7 @@ function NavigationBar() {
           <button className="btn">
             <img
               style={{ backGroundColor: "transparent" }}
+              title = "dark-mode"
               src={
                 isDay
                   ? process.env.PUBLIC_URL + "/svg/sun.svg"

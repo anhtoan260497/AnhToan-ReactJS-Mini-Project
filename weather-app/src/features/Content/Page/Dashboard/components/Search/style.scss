@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
+$search_container--input-width-pc : 100%;
+
+
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: wrap, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+}
+
+
+.search_container--input{
+    
+    width: $search_container--input-width-pc;
+    height: 10rem;
+    padding: 0 3rem 0 0;
+
+    @include flex(space-between,center);
+
+    .form {
+        margin-right: -5rem;
+    }
+
+    .search__location--title{
+        font-size: 3rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .search_location--input{
+        width: 25rem;
+        background-color: rgb(244,244,244);
+        height: 4rem;
+        border:none;
+        border-radius: 1rem;
+        padding:2rem;
+        font-family: 'Source Sans 3', sans-serif;
+        outline:none;
+        
+        
+
+        &::placeholder {
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        &:focus::placeholder {
+            color:transparent;
+            transition: color .5s ease;
+        }
+    }
+
+    .search_location--btn{
+        opacity: 1;
+        position: relative;
+        right: 3rem;
+        top : .5rem;
+        background-color: transparent;
+        border:none;
+        cursor: pointer;
+    }
+}
+
+.dark-search {
+    color:white;
+}
