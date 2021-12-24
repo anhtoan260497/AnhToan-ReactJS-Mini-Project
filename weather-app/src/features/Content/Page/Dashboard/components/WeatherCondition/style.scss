@@ -1,15 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap");
 
-.condition_container--area {
-    width: 100%;
-    // background-color: blue;
+@mixin flex ($justify,$align){
     display: flex;
-    justify-content: space-between;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+.condition_container--area {
+    width: 50%;
     padding-top: 4rem;
     font-family: "Quicksand", sans-serif;
 
     .condition_display--area {
-        width: 45%;
+        width: 100%;
         height: 25rem;
         background-position: center;
         background-size: cover;
@@ -106,10 +110,33 @@
 
     }
 
-    .condition_aqi--area {
-        width: 45%;
+    .condition_iqa--area {
+        width: 100%;
         height: 25rem;
-        border: 1px solid black;
+        margin-top : 4rem;
+        font-size: 2rem;
+        border-radius: 2rem;
+        color:black;
+
+        display: flex;
+        justify-content: space-between;
+
+        .iqa-icon,.iqa-status,.iqa-score{
+            width: 30%;
+
+           @include flex(center,center);
+
+            img { 
+                width: 10rem;
+            }
+        }
+
+        .iqa-score,.iqa-status {
+            flex-direction: column;
+            opacity: .5;
+        }
+
+
     }
 }
 

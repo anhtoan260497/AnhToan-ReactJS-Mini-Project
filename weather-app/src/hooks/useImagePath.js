@@ -5,8 +5,6 @@ const useImagePath = (id) => {
   const [imagePath, setImagePath] = useState();
   const isDay = useSelector((state) => state.isDay.isDay);
 
-  console.log(id);
-
   useEffect(() => {
     if (id <= 232 && isDay) {
       setImagePath("thunderstorms-day.jpg");

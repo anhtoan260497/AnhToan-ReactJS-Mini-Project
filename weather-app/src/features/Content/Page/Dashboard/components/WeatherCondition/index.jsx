@@ -3,13 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import useImagePath from "../../../../../../hooks/useImagePath";
 import "./style.scss";
+import IQAirSvg from '../../../../../../svg/IQAirSvg'
+import useIQA from "../../../../../../hooks/useIQA";
 
 WeatherCondition.propTypes = {};
 
-function WeatherCondition(props) {
+function WeatherCondition({IQAData}) {
   const weatherCurrent = useSelector((state) => state.getCurrentLocation.data);
   const [id,setId] = useState()
   const imagePath = useImagePath(id)
+
 
   const isDay = useSelector((state) => state.isDay).isDay
 
@@ -18,6 +21,8 @@ function WeatherCondition(props) {
       setId(weatherCurrent.weather[0].id)
     }
   },[weatherCurrent])
+
+
 
   return (
     <>
@@ -87,7 +92,18 @@ function WeatherCondition(props) {
               </div>
             </section>
           </div>
-          <div className="condition_aqi--area"></div>
+         {!IQAData?.isLoading ?  <div className="condition_iqa--area"
+            style={{backgroundColor : `${IQAData?.color}`}}
+          >
+            <div className="iqa-icon">
+              <img src={IQAData?.imgPath} alt=""/>
+            </div>
+            <div className="iqa-score">
+              <h2 style={{lineHeight:'8 rem'}}>{IQAData?.score}</h2>
+              <p>US AQI</p>
+            </div>
+            <div className="iqa-status">{IQAData?.name}</div>
+          </div> : null}
         </div>
       ) : null}
     </>

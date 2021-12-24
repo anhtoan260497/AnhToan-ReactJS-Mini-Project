@@ -6,6 +6,7 @@ import NavigationBar from "./features/NavigationBar";
 import About from './features/Content/Page/About'
 import clsx from "clsx";
 import { useSelector } from "react-redux";
+import Search from "./features/Content/Page/Search";
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
         })}>
           <Switch>
            <Route path="/Dashboard" component={Dashboard}/>
+           <Route path="/Search" component={Search}/>
            <Route path="/Favorite"  component={Favorite}/>
            <Route path="/About" component={About}/>
            <Redirect from='/' to='/Dashboard' />
