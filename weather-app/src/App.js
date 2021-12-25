@@ -23,7 +23,7 @@ function App() {
            <Route path="/Search" component={Search}/>
            <Route path="/Favorite"  component={Favorite}/>
            <Route path="/About" component={About}/>
-           <Redirect from='/' to='/Dashboard' />
+           <Redirect from='/' to='/Dashboard' component={Dashboard} />
           </Switch>
         </div>
       </div>

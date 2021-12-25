@@ -5,22 +5,19 @@ import { getCurrent } from "../../../../app/currentLocationSlice";
 import { useSelector } from "react-redux";
 import WeatherCondition from "./components/WeatherCondition";
 import WeatherPrediction from "./components/WeatherPrediction";
-import useIQA from '../../../../hooks/useIQA'
+import useIQA from "../../../../hooks/useIQA";
+import usePrediction from "../../../../hooks/usePrediction";
 
 Dashboard.propTypes = {};
 
 function Dashboard(props) {
   const API_key = process.env.REACT_APP_WEATHER_API_KEY;
-  const API_key_IQA = process.env.REACT_APP_IQA_API_KEY
+  const API_key_IQA = process.env.REACT_APP_IQA_API_KEY;
 
   const [location, setLocation] = useState();
   const dispatch = useDispatch();
-  
-  const IQAData = useIQA(location,API_key_IQA)
-  
 
-
-
+  const IQAData = useIQA(location, API_key_IQA);
 
   const choosenLocation = useSelector(
     (state) => state.getCurrentLocation.data.name
@@ -30,12 +27,18 @@ function Dashboard(props) {
   );
   const isLoading = useSelector((state) => state.getCurrentLocation.isLoading);
 
+    const predictionData = usePrediction(location,API_key)  
+
+
+   
+  //  const a =  Date(1640318400)
+  //  console.log(new Date(1640318400*1000).getDate())
+
   useEffect(() => {
-  navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
       setLocation([position.coords.latitude, position.coords.longitude]);
     });
-  }
-  , []);
+  }, []);
 
   useEffect(() => {
     if (!location) return;
@@ -49,8 +52,10 @@ function Dashboard(props) {
         country={country}
         isLoading={isLoading}
       />
-
-      <WeatherCondition IQAData={IQAData}/>
+      <div style={{display :'flex',gap :'2rem'}}>
+        <WeatherCondition IQAData={IQAData} />
+        <WeatherPrediction predictionData={predictionData}/>
+      </div>
     </>
   );
 }

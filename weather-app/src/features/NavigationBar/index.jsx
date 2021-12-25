@@ -5,6 +5,7 @@ import {
   GithubOutlined,
 } from "@ant-design/icons";
 import clsx from "clsx";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
@@ -15,7 +16,8 @@ function NavigationBar() {
   const isDay = useSelector((state) => state.isDay.isDay);
   const firstChoose = useLocation().pathname
   const [chooseMenu,setChooseMenu] =useState(firstChoose)
-
+  
+  const pathname = useLocation()
 
   const dispatch = useDispatch();
 
@@ -24,7 +26,7 @@ function NavigationBar() {
   };
 
   const onHandleChangeMenu = (values) => {
-    if(values === 'Dashboard') {
+    if(values === 'Dashboard' || values === '/') {
       setChooseMenu('/Dashboard')
     }
     if(values === 'Favorite') {
@@ -37,6 +39,11 @@ function NavigationBar() {
       setChooseMenu('/Search')
     }
   };
+
+  useEffect(()=>{
+if(pathname.pathname === '/') setChooseMenu('/Dashboard')
+
+  },[pathname])
 
   
 

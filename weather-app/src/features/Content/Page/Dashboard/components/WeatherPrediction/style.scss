@@ -1,4 +1,9 @@
 .prediction_container--area{
-    width: 30%;
-    background-color: yellow;
+    width: 48%;
+    margin-top: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }

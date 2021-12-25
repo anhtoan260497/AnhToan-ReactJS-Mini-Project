@@ -17,7 +17,7 @@ const IQAirSVg = {
   unhealthySentitiveGroup: {
     imgPath: "https://www.iqair.com/assets/aqi/ic-face-red.svg",
     color: "rgb(252,153,82)",
-    name : 'Unhealthy for SentitiveGroup'
+    name : 'Unhealthy for Sentitive Group'
 
   },
   moderate: {
