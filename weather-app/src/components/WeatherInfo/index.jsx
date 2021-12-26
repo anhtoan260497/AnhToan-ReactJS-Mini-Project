@@ -7,32 +7,36 @@ import clsx from "clsx";
 
 WeatherInfo.propTypes = {};
 
-function WeatherInfo({predictionData}) {
+function WeatherInfo({ predictionData }) {
   const isDay = useSelector((state) => state.isDay.isDay);
 
-  console.log(predictionData)
+  const date = new Date(predictionData.dt * 1000).getDate();
+  const month = new Date(predictionData.dt * 1000).getMonth() + 1;
+  const year = new Date(predictionData.dt * 1000).getFullYear();
 
-  const date =   new Date(predictionData.dt*1000).getDate()
-  const month =  new Date(predictionData.dt*1000).getMonth() + 1 
- const year =  new Date(predictionData.dt*1000).getFullYear() 
-
- const svgPath = useSVGIcon(predictionData.weather[0].id,isDay)
-
+  const svgPath = useSVGIcon(predictionData.weather[0].id, isDay);
 
   return (
-    <div className={clsx("weather_info--container",{
-        'dark-weather-container' : !isDay ? true :false
-    })}>
+    <div
+      className={clsx("weather_info--container", {
+        "dark-weather-container": !isDay ? true : false,
+      })}
+    >
       <img
-        style={{ width: "10rem"}}
+        style={{ width: "15%" }}
         src={process.env.PUBLIC_URL + svgPath}
         alt=""
       />
       <div className="weather_info--display">
-          <p>{date}/{month}/{year}</p>
+        <p>
+          {date}/{month}/{year}
+        </p>
         <h2>{predictionData.weather[0].description}</h2>
       </div>
-      <div className="weather_info--temp">{Math.trunc(predictionData.temp.eve-273.15)}°C / {Math.trunc(predictionData.temp.max -273.15)}°C</div>
+      <div className="weather_info--temp">
+        {Math.trunc(predictionData.temp.eve - 273.15)}°C /{" "}
+        {Math.trunc(predictionData.temp.max - 273.15)}°C
+      </div>
     </div>
   );
 }

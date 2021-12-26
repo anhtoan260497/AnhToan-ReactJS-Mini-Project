@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Search from "./components/Search";
-import { useDispatch } from "react-redux";
-import { getCurrent } from "../../../../app/currentLocationSlice";
-import { useSelector } from "react-redux";
-import WeatherCondition from "./components/WeatherCondition";
-import WeatherPrediction from "./components/WeatherPrediction";
+import Search from "../../../../components/Search";
+import WeatherCondition from "../../../../components/WeatherCondition";
+import WeatherPrediction from "../../../../components/WeatherPrediction";
 import useIQA from "../../../../hooks/useIQA";
 import usePrediction from "../../../../hooks/usePrediction";
+import useCurrentWeatherData from "../../../../hooks/useCurrentWeatherData";
 
 Dashboard.propTypes = {};
 
@@ -15,24 +13,14 @@ function Dashboard(props) {
   const API_key_IQA = process.env.REACT_APP_IQA_API_KEY;
 
   const [location, setLocation] = useState();
-  const dispatch = useDispatch();
 
   const IQAData = useIQA(location, API_key_IQA);
 
-  const choosenLocation = useSelector(
-    (state) => state.getCurrentLocation.data.name
-  );
-  const country = useSelector(
-    (state) => state.getCurrentLocation.data.sys?.country
-  );
-  const isLoading = useSelector((state) => state.getCurrentLocation.isLoading);
+  
+  const predictionData = usePrediction(location, API_key);
 
-    const predictionData = usePrediction(location,API_key)  
+  const currentWeatherData = useCurrentWeatherData(location, API_key);
 
-
-   
-  //  const a =  Date(1640318400)
-  //  console.log(new Date(1640318400*1000).getDate())
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -40,21 +28,23 @@ function Dashboard(props) {
     });
   }, []);
 
-  useEffect(() => {
-    if (!location) return;
-    dispatch(getCurrent([location[0], location[1], API_key]));
-  }, [dispatch, location, API_key]);
+  const chooseLocation = currentWeatherData?.currentWeatherData.name;
+  const country = currentWeatherData?.currentWeatherData?.sys?.country;
 
   return (
     <>
       <Search
-        location={choosenLocation}
+        location={chooseLocation}
         country={country}
-        isLoading={isLoading}
+        isLoading={currentWeatherData.isLoading}
       />
-      <div style={{display :'flex',gap :'2rem'}}>
-        <WeatherCondition IQAData={IQAData} />
-        <WeatherPrediction predictionData={predictionData}/>
+      <div style={{ display: "flex", gap: "2rem" }}>
+        <WeatherCondition
+          dataWeather={currentWeatherData.currentWeatherData}
+          isLoading={currentWeatherData.isLoading}
+          IQAData={IQAData}
+        />
+        <WeatherPrediction predictionData={predictionData} />
       </div>
     </>
   );

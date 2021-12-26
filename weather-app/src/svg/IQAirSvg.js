@@ -6,7 +6,7 @@ const IQAirSVg = {
   },
   veryUnhealthy: {
     imgPath: "https://www.iqair.com/assets/aqi/ic-face-purple.svg",
-    color: "rgb(165,126187)",
+    color: "rgb(165,126,187)",
     name : 'Very Unhealthy'
   },
   unhealthy: {

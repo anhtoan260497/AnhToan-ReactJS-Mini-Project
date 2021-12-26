@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const axiosClient = axios.create({
-    baseURL : 'http://api.airvisual.com/v2/nearest_city?',
+    baseURL : 'https://api.airvisual.com/v2',
     headers : {
         'Content-type' : 'application/json',
     },

@@ -1,12 +1,11 @@
 import {Redirect, Route, Switch } from "react-router-dom";
 import "./App.scss";
 import Dashboard from "./features/Content/Page/Dashboard";
-import Favorite from "./features/Content/Page/Favorite";
 import NavigationBar from "./features/NavigationBar";
 import About from './features/Content/Page/About'
 import clsx from "clsx";
 import { useSelector } from "react-redux";
-import Search from "./features/Content/Page/Search";
+import SearchPage from "./features/Content/Page/SearchPage";
 
 function App() {
   
@@ -20,8 +19,7 @@ function App() {
         })}>
           <Switch>
            <Route path="/Dashboard" component={Dashboard}/>
-           <Route path="/Search" component={Search}/>
-           <Route path="/Favorite"  component={Favorite}/>
+           <Route path="/Search" component={SearchPage}/>
            <Route path="/About" component={About}/>
            <Redirect from='/' to='/Dashboard' component={Dashboard} />
           </Switch>

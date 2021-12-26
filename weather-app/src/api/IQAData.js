@@ -1,10 +1,10 @@
 import axiosClientIQA from "./axiosClientIQA"
 
-const currentLocationApi = {
+const IQAApi = {
     getTodayWithGeo : (lat,lon,API_Key) => {
-        const url = `lat=${lat}&lon=${lon}&key=${API_Key}`
+        const url = `/nearest_city?lat=${lat}&lon=${lon}&key=${API_Key}`
         return axiosClientIQA.get(url)
     }
 }
 
-export default currentLocationApi
+export default IQAApi
