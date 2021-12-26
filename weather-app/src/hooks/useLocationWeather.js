@@ -8,13 +8,14 @@ const useLocationWeather = (keyword,API_key) => {
 
     useEffect(()=>{
 
-        const fetchData = async () => {
-            setIsLoading(true)
+     try {   const fetchData = async () => {
+          setIsLoading(true)
             const data = await searchLocationApi.getTodayWithName(keyword,API_key)
             setWeatherData(data.data)
             setIsLoading(false)
         }
-        fetchData()
+        fetchData()}
+        catch (error)  {console.log(error.message)}
 
     },[API_key,keyword])
 

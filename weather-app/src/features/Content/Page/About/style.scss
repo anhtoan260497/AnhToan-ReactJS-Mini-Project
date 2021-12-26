@@ -1,0 +1,22 @@
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+
+    span {
+        font-size: 2rem;
+        margin-left: 2rem;
+        text-decoration: none;
+        color: black;
+        font-family: "Balsamiq Sans", cursive;
+    }
+}
+.dark-color {
+    color: white;
+    a {
+        span {
+            color: white;
+        }
+    }
+}

@@ -8,8 +8,8 @@ const useIQA = (location, API_Key) => {
   const [SVG, setSVG] = useState("");
 
   useEffect(() => {
-    if (!location) return;
-    let [lat, lon] = location;
+    if (location.length <  1  ) return;
+    const [lat, lon] = location;
 
  const fetchIQAData = async () => {
     setIsLoading(true);

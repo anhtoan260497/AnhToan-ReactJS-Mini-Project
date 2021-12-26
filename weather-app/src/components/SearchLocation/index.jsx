@@ -23,6 +23,7 @@ function SearchLocation(props) {
 
   const searchLocationWeatherData = useLocationWeather(keyword, API_key);
 
+
      const predictionData = usePrediction(location, API_key);
 
   useEffect(()=>{

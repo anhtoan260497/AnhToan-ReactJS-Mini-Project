@@ -10,7 +10,7 @@ const useCurrentWeatherData = (location,API_Key) => {
 
 
     useEffect(()=>{
-        if(!location) return 
+        if(location.length < 1) return 
         const [lat,lon] = location
         const fetchData = async () => {
             setIsLoading(true)

@@ -3,7 +3,7 @@ import Search from "../../../../components/Search";
 import WeatherCondition from "../../../../components/WeatherCondition";
 import WeatherPrediction from "../../../../components/WeatherPrediction";
 import useIQA from "../../../../hooks/useIQA";
-import usePrediction from "../../../../hooks/usePrediction";
+import usePrediction from '../../../../hooks/usePrediction'
 import useCurrentWeatherData from "../../../../hooks/useCurrentWeatherData";
 
 Dashboard.propTypes = {};
@@ -12,7 +12,7 @@ function Dashboard(props) {
   const API_key = process.env.REACT_APP_WEATHER_API_KEY;
   const API_key_IQA = process.env.REACT_APP_IQA_API_KEY;
 
-  const [location, setLocation] = useState();
+  const [location, setLocation] = useState([]);
 
   const IQAData = useIQA(location, API_key_IQA);
 
