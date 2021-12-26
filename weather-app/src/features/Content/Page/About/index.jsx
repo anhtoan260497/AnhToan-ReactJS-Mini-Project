@@ -13,7 +13,6 @@ function About() {
       style={{
         width: "100%",
         height: " 100vh",
-        border: "1px solid red",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
