@@ -65,3 +65,17 @@ $search_container--input-width-pc : 100%;
 .dark-search {
     color:white;
 }
+
+@media  screen and (min-width:768px) and (max-width : 1023px)  {
+    .search_container--input{
+        max-width: $search_container--input-width-pc ;
+
+        .search__location--title{
+            font-size: 2.5rem;
+        }
+
+        .search_location--input{
+        width: 20rem;
+        }
+    }
+}
