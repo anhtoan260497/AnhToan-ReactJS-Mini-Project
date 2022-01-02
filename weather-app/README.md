@@ -11,3 +11,4 @@
 7 . @ant-design/icons for icon components
 8 . React-Router-Dom V5
 9 . styling with SCSS
+10. clsx

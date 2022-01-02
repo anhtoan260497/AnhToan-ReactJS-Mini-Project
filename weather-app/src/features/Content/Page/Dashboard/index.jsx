@@ -6,6 +6,7 @@ import useIQA from "../../../../hooks/useIQA";
 import usePrediction from '../../../../hooks/usePrediction'
 import useCurrentWeatherData from "../../../../hooks/useCurrentWeatherData";
 
+
 Dashboard.propTypes = {};
 
 function Dashboard(props) {
@@ -14,9 +15,12 @@ function Dashboard(props) {
 
   const [location, setLocation] = useState([]);
 
+
+
   const IQAData = useIQA(location, API_key_IQA);
 
-  
+
+
   const predictionData = usePrediction(location, API_key);
 
   const currentWeatherData = useCurrentWeatherData(location, API_key);
