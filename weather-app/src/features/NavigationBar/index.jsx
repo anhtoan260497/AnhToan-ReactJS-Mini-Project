@@ -44,14 +44,27 @@ function NavigationBar() {
     dt.getMonth(),
     dt.getFullYear(),
   ];
-  const dayOfWeek = ["Sun", "Mon", "Tue", "Wednes", "Thu", "Fri", "Sat"];
+  const dayOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const monthOfYear = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
   useEffect(() => {
     if (pathname.pathname === "/") setChooseMenu("/Dashboard");
-    if(pathname.pathname === '/About') setChooseMenu('/About')
-    if(pathname.pathname === '/Search') setChooseMenu('/Search')
-    if(pathname.state?.search === true) setChooseMenu('/Search')
-
+    if (pathname.pathname === "/About") setChooseMenu("/About");
+    if (pathname.pathname === "/Search") setChooseMenu("/Search");
+    if (pathname.state?.search === true) setChooseMenu("/Search");
   }, [pathname]);
 
   return (
@@ -97,10 +110,34 @@ function NavigationBar() {
           About Me
         </Link>
       </div>
-      <div className={clsx("day-info",{
-        'dark-text' : !isDay ? true :false 
-      })}>
-        {dayOfWeek[date]} {day}/{month}/{year}
+      <div
+        className={clsx("day-info", {
+          "dark-text": !isDay ? true : false,
+        })}
+      >
+        {dayOfWeek[date]}{" "}
+        {day % 10 === 1 ? (
+          <span>
+            {day}
+            <span className="ordinal">st</span>
+          </span>
+        ) : (day % 10 === 10) === 2 ? (
+          <span>
+            {day}
+            <span className="ordinal">nd</span>
+          </span>
+        ) : day % 10 === 3 ? (
+          <span>
+            {day}
+            <span className="ordinal">rd</span>
+          </span>
+        ) : (
+          <span>
+            {day}
+            <span className="ordinal">th</span>
+          </span>
+        )}
+        , {monthOfYear[month]} {year}
       </div>
       <div onClick={handleDarkModeBtn} className="nav_btn--nightmode">
         <button className="btn">
